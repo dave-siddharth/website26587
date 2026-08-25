@@ -2,7 +2,7 @@
 
 Astro site for FTC Team 26587 Triple Six.
 
-This version was redesigned around the same broad information architecture and minimalist presentation principles as the Horizon FTC 36596 website, while retaining original Triple Six branding, content, photos and copy.
+ftc 27891 goat
 
 ## Run locally
 
