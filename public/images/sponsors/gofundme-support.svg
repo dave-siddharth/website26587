@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220">
+  <rect width="760" height="220" fill="none"/>
+  <g transform="translate(42,40)">
+    <g fill="#C8F169">
+      <rect x="96" y="0" width="12" height="34" rx="6"/>
+      <rect x="56" y="12" width="12" height="30" rx="6" transform="rotate(-32 62 27)"/>
+      <rect x="136" y="12" width="12" height="30" rx="6" transform="rotate(32 142 27)"/>
+      <path d="M66 76c0-24 17-42 36-42s36 18 36 42H66Z"/>
+    </g>
+    <text x="0" y="138"
+      font-family="Inter, Arial, Helvetica, sans-serif"
+      font-size="86"
+      font-weight="800"
+      letter-spacing="-4"
+      fill="#F5F7F4">gofundme</text>
+  </g>
+</svg>

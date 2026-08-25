@@ -75,3 +75,20 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Replaced the Dave Academy logo with a cleaner transparent version.
 - Homepage support strip now includes Dave Academy, Cambridge STEAM Lab, and Canva.
 - Sponsors page now lists Dave Academy, Cambridge STEAM Lab, and Canva.
+
+## v28 updates
+- Replaced the broken Canva sponsor logo with the uploaded transparent Canva logo.
+- Updated Canva sponsor description:
+  "Canva gave Triple Six free Canva Pro, helping us design marketing materials, social media posts, outreach visuals and more."
+- Homepage and Sponsors page now use `public/images/sponsors/canva-logo.png`.
+
+## v29 updates
+- Replaced the broken Dave Academy asset with the original Dave Academy artwork.
+- Removed only the white background and preserved the original logo design, colours and wordmark.
+- All Dave Academy references now use `public/images/sponsors/dave-academy-original-clean.png`.
+
+## v30 updates
+- Added a GoFundMe support block to the Sponsors page.
+- Added a clickable GoFundMe support mark.
+- Added fundraiser link: https://www.gofundme.com/f/support-ftc-team-26587-triple-six-for-their-upcoming-seaso
+- Added a "Donate on GoFundMe" button to the homepage sponsor section.

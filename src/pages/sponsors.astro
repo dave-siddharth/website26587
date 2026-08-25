@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 const sponsors = [
   {
     name: 'Dave Academy',
-    logo: '/images/sponsors/dave-academy-clean.png',
+    logo: '/images/sponsors/dave-academy-original-clean.png',
     support: 'Registration Support · Mentorship',
     description: 'Dave Academy helped fund our FTC registration costs and supports Triple Six through mentors from their organisation.',
   },
@@ -16,9 +16,9 @@ const sponsors = [
   },
   {
     name: 'Canva',
-    logo: '/images/sponsors/canva-wordmark.svg',
-    support: 'Design Support',
-    description: 'Canva supports Triple Six by helping us create visual materials for outreach, communication and team presentation.',
+    logo: '/images/sponsors/canva-logo.png',
+    support: 'Design Support · Canva Pro',
+    description: 'Canva gave Triple Six free Canva Pro, helping us design marketing materials, social media posts, outreach visuals and more.',
   },
 ];
 ---
@@ -46,6 +46,27 @@ const sponsors = [
           </div>
         </article>
       ))}
+    </div>
+  </section>
+
+
+  <section class="section fundraiser-section">
+    <div class="shell fundraiser-card">
+      <div class="fundraiser-logo">
+        <img src="/images/sponsors/gofundme-support.svg" alt="GoFundMe" />
+      </div>
+
+      <div class="fundraiser-copy">
+        <p class="eyebrow">Support Triple Six</p>
+        <h2>Help fuel our next season.</h2>
+        <p>
+          Donations help us fund robot development, competition costs, tools,
+          travel and the outreach work that lets us support more young people in STEM.
+        </p>
+        <a class="fundraiser-button" href="https://www.gofundme.com/f/support-ftc-team-26587-triple-six-for-their-upcoming-seaso" target="_blank" rel="noreferrer">
+          Donate on GoFundMe <span>↗</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -207,5 +228,79 @@ const sponsors = [
 
 .partner-button:hover {
   border-color: var(--accent);
+}
+
+.fundraiser-card {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  gap: clamp(34px, 7vw, 90px);
+  align-items: center;
+  padding: clamp(34px, 6vw, 66px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255,255,255,.015);
+}
+
+.fundraiser-logo {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+}
+
+.fundraiser-logo img {
+  width: min(100%, 390px);
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.fundraiser-copy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.fundraiser-copy > p:not(.eyebrow) {
+  max-width: 600px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.fundraiser-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  font-size: .76rem;
+  font-weight: 760;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.fundraiser-button span {
+  color: var(--accent);
+}
+
+.fundraiser-button:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .fundraiser-card {
+    grid-template-columns: 1fr;
+  }
+
+  .fundraiser-logo {
+    min-height: 130px;
+    justify-items: start;
+  }
+
+  .fundraiser-logo img {
+    max-width: 280px;
+  }
 }
 </style>
