@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const features = [
+  '3D Printed Side Triangles',
+  'REV Starter Bot with Mecanum Upgrade',
+  'Efficient claw system',
+];
+
+const systems = [
+  ['01','Structure','A practical early-season architecture built around 3D printed side triangles and a straightforward, effective frame.'],
+  ['02','Drivetrain','Based on the REV Starter Bot platform, upgraded to mecanum for improved movement and driving flexibility.'],
+  ['03','Claw system','An efficient claw mechanism focused on reliable game-piece handling and simple operation.'],
+  ['04','Development','A foundational robot that helped establish engineering, build and competition experience for the team.'],
+];
+---
+<Base title="2024–2025 · INTO THE DEEP · Triple Six">
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">2024–2025 season</p>
+      <h1>INTO THE <span class="gradient-text">DEEP.</span></h1>
+      <p class="lede">An early-season robot built around simplicity, learning and effective field performance.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="robot-hero">
+        <img src="/images/robots/into-the-deep.png" alt="INTO THE DEEP robot image" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Key features</p>
+        <h2 class="section-title">What defined INTO THE DEEP.</h2>
+      </div>
+      <div>
+        <ul class="feature-list">
+          {features.map((feature) => <li>{feature}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <p class="eyebrow">Subsystems</p>
+      <div class="small-grid">
+        {systems.map(([n, title, desc]) => (
+          <article class="small-card">
+            <span class="number">{n}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.robot-hero {
+  min-height: 620px;
+  border-radius: 28px;
+  background: #05070d;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.robot-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.feature-list li {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.feature-list li::marker {
+  color: var(--lime);
+}
+</style>

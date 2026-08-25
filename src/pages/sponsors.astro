@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+
+const sponsors = [
+  {
+    name: 'Dave Academy',
+    logo: '/images/sponsors/dave-academy-transparent.png',
+    support: 'Registration Support · Mentorship',
+    description: 'Dave Academy helped fund our FTC registration costs and supports Triple Six through mentors from their organisation.',
+    website: null,
+  },
+  {
+    name: 'Cambridge STEAM Lab',
+    logo: '/images/sponsors/cambridge-steam-lab-transparent.png',
+    support: 'Parent Organisation · Mentorship · Financial Support',
+    description: 'Cambridge STEAM Lab is our parent organisation. They provide mentors to the team and have supported Triple Six financially.',
+    website: null,
+  },
+];
+---
+<Base title="Sponsors · Triple Six FTC 26587">
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Partners</p>
+      <h1>OUR <span class="gradient-text">SPONSORS.</span></h1>
+      <p class="lede">
+        The organisations that help make our engineering, competition and outreach possible.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell sponsor-list">
+      {sponsors.map((sponsor, index) => (
+        <article class="sponsor">
+          <div class="sponsor-logo-wrap">
+            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
+          </div>
+
+          <div class="sponsor-copy">
+            <span class="sponsor-number">{String(index + 1).padStart(2, '0')}</span>
+            <p class="support">{sponsor.support}</p>
+            <h2>{sponsor.name}</h2>
+            <p class="description">{sponsor.description}</p>
+            {sponsor.website && (
+              <a class="link" href={sponsor.website} target="_blank" rel="noreferrer">
+                Visit sponsor
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+.sponsor-list {
+  display: grid;
+  gap: 110px;
+}
+
+.sponsor {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  gap: clamp(42px, 7vw, 100px);
+  align-items: center;
+  padding-bottom: 92px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sponsor:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sponsor:nth-child(even) .sponsor-logo-wrap {
+  order: 2;
+}
+
+.sponsor:nth-child(even) .sponsor-copy {
+  order: 1;
+}
+
+.sponsor-logo-wrap {
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 48px);
+  background: transparent;
+}
+
+.sponsor-logo-wrap img {
+  width: min(100%, 650px);
+  max-height: 330px;
+  object-fit: contain;
+}
+
+.sponsor-number {
+  color: var(--lime);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.support {
+  margin: 20px 0 10px;
+  color: var(--lime);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.sponsor h2 {
+  margin: 0 0 20px;
+  font-size: clamp(3rem, 6vw, 6.2rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.description {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .sponsor {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sponsor:nth-child(even) .sponsor-logo-wrap,
+  .sponsor:nth-child(even) .sponsor-copy {
+    order: initial;
+  }
+
+  .sponsor-logo-wrap {
+    min-height: 280px;
+    padding: 12px;
+  }
+}
+</style>

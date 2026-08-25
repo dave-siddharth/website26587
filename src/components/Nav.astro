@@ -1,0 +1,5 @@
+---
+const links=[['Robots','/robots'],['Team','/team'],['Outreach','/outreach'],['Sponsors','/sponsors'],['Contact','/contact']];
+---
+<header class="nav"><div class="shell nav-inner"><a class="brand" href="/"><img src="/images/triple-six-logo.png" alt="Triple Six FTC 26587 logo"/><span>TRIPLE SIX</span></a><nav>{links.map(([label,href])=><a href={href}>{label}</a>)}</nav></div></header>
+<style>.nav{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(2,6,18,.78);backdrop-filter:blur(18px)}.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.13em;font-size:.78rem}.brand img{width:46px;height:46px;object-fit:cover;border-radius:50%}nav{display:flex;align-items:center;gap:27px}nav a{color:#aeb8c4;font-size:.8rem;font-weight:700}nav a:hover{color:white}@media(max-width:720px){nav{gap:14px;overflow-x:auto}nav a{font-size:.72rem}.brand span{display:none}}</style>

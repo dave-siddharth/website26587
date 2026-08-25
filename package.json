@@ -1,0 +1,7 @@
+{
+  "name": "triple-six-ftc-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"dev":"astro dev","start":"astro dev","build":"astro build","preview":"astro preview"},
+  "dependencies": {"astro":"^5.13.0"}
+}
