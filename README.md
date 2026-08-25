@@ -92,3 +92,9 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Added a clickable GoFundMe support mark.
 - Added fundraiser link: https://www.gofundme.com/f/support-ftc-team-26587-triple-six-for-their-upcoming-seaso
 - Added a "Donate on GoFundMe" button to the homepage sponsor section.
+
+## v31 updates
+- Added more Triple Six brand colour throughout the site while keeping the overall dark look.
+- Expanded the lime → green → cyan gradient across hero text, buttons, section accents, robot cards and sponsor areas.
+- Added subtle cyan/green glows, hover states and gradient borders.
+- Kept the design restrained so it still feels like Horizon rather than a neon/gaming site.

@@ -40,7 +40,7 @@ const posts = [
 
       <h1>
         <span class="team-word">Triple Six —</span>
-        <span class="hero-message">Building towards<br />what’s next</span>
+        <span class="hero-message brand-gradient">Building towards<br />what’s next</span>
       </h1>
 
       <div class="hero-lower">
@@ -250,7 +250,7 @@ const posts = [
 .home-hero {
   padding: clamp(74px, 9vw, 126px) 0 clamp(70px, 8vw, 112px);
   border-bottom: 1px solid var(--line);
-  background: #020305;
+  background: linear-gradient(180deg, rgba(8,13,17,.96), rgba(2,3,5,.96));
 }
 
 .hero-shell {
@@ -357,8 +357,49 @@ const posts = [
   border-color: var(--accent);
 }
 
+.brand-gradient {
+  background: linear-gradient(100deg, #f5f7f4 0%, #d9ff72 42%, #70e681 68%, #11cfe0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-button.primary {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #020506;
+}
+
+.hero-button.primary:hover {
+  filter: brightness(1.05);
+}
+
+.hero-button:not(.primary):hover {
+  background: rgba(112,230,129,.06);
+}
+
 /* Support strip */
+.support-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent-gradient);
+  opacity: .45;
+}
+
+.support-logo {
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.support-logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 16px rgba(17,207,224,.16));
+}
+
 .support-bar {
+  position: relative;
   border-bottom: 1px solid var(--line);
   background: #020305;
 }
@@ -484,6 +525,10 @@ const posts = [
 
 .achievement-stats strong {
   display: block;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-size: clamp(2.4rem, 5vw, 4.5rem);
   line-height: 1;
   letter-spacing: -.06em;
@@ -491,6 +536,9 @@ const posts = [
 
 .achievement-media {
   margin: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(202,255,50,.34), rgba(112,230,129,.18), rgba(17,207,224,.30));
+  box-shadow: 0 18px 60px rgba(17,207,224,.07);
 }
 
 .achievement-media img {
@@ -586,9 +634,10 @@ const posts = [
 
 .sponsor-callout {
   margin-top: 32px;
-  padding: 24px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  padding: 24px 22px;
+  border: 1px solid rgba(112,230,129,.18);
+  border-radius: 14px;
+  background: linear-gradient(120deg, rgba(202,255,50,.035), rgba(17,207,224,.025));
 }
 
 .sponsor-callout-label {
