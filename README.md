@@ -1,62 +1,33 @@
-# Triple Six FTC 26587 Website
+# Triple Six FTC 26587 website — v18
 
-Modern Astro starter site.
+Astro site for FTC Team 26587 Triple Six.
+
+This version was redesigned around the same broad information architecture and minimalist presentation principles as the Horizon FTC 36596 website, while retaining original Triple Six branding, content, photos and copy.
 
 ## Run locally
 
-1. Install Node.js 20+
-2. Open a terminal in this folder
-3. Run `npm install`
-4. Run `npm run dev`
+```bash
+npm install
+npm run dev
+```
 
 ## Build
 
-Run `npm run build`.
+```bash
+npm run build
+```
 
 ## Deploy
 
-Recommended: GitHub + Vercel or Netlify.
+Connect the repository to Vercel or Netlify. Astro should be detected automatically.
 
-## Replace placeholders
+## v19 updates
+- Homepage hero photo removed for a clean black opening.
+- Cambridge STEAM Lab logo converted to white on transparent background.
+- Email updated to triplesixftc@gmail.com with mailto links.
+- Instagram updated to @triplesixftc with clickable Instagram links.
 
-- Logo: `public/images/triple-six-logo.png`
-- Robot pages: `src/pages/robots/`
-- Team: `src/pages/team.astro`
-- Outreach: `src/pages/outreach.astro`
-- Sponsors: `src/pages/sponsors.astro`
-- Contact: `src/pages/contact.astro`
-
-## Robot season pages
-- `/robots/2024-2025` — INTO THE DEEP
-- `/robots/2025-2026` — DECODE
-- `/robots/2026-2027` — BIOBUZZ
-
-## Team content added
-- Yuteng W — Finance & Build
-- Photo: `public/images/team/yuteng-w.png`
-- Siddharth D — CAD / Programmer · Portfolio · Driver
-- Photo: `public/images/team/siddharth-d.png`
-- William R — Outreach & Build
-- Photo: `public/images/team/william-r.png`
-- Kinjal Dave — Mentor
-- Photo: `public/images/team/kinjal-dave.png`
-- Isha Dave — Mentor
-- Photo: `public/images/team/isha-dave.png`
-## Robot content added
-- DECODE image: `public/images/robots/decode.png`
-- DECODE page updated with key features and subsystem text.
-- BIOBUZZ preseason image: `public/images/robots/biobuzz-preseason.png`
-- BIOBUZZ page updated with key features and preseason subsystem text.
-- INTO THE DEEP image: `public/images/robots/into-the-deep.png`
-- INTO THE DEEP page updated with key features and subsystem text.
-## Sponsors added
-- Dave Academy — helped fund FTC registration costs and provides mentors.
-- Transparent Dave Academy logo: `public/images/sponsors/dave-academy.png`
-## Sponsor section updated
-- Dave Academy — registration support and mentorship.
-- Cambridge STEAM Lab — parent organisation, mentorship and financial support.
-- Both sponsor logos use transparent-background PNG files.
-## Outreach section added
-- Added 5 outreach images and a new image-led outreach page.
-- Darkened remaining light page sections for a more consistent black/dark site background.
-- Team group photo: `public/images/team/team-group.png`
+## v20 updates
+- Added clickable YouTube link: https://www.youtube.com/@TripleSixFTC
+- Added email, Instagram and YouTube icons/logos on the Contact page.
+- Added the same clickable icon links in the footer.

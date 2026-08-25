@@ -1,134 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const outreachItems = [
-  {
-    number: '01',
-    title: 'Community presentations',
-    image: '/images/outreach/scout-presentation.png',
-    description: 'We introduce students and local groups to robotics, FIRST Tech Challenge and the engineering journey behind our team.',
-  },
-  {
-    number: '02',
-    title: 'School engagement',
-    image: '/images/outreach/school-presentation.png',
-    description: 'Through talks and demonstrations, we share what FTC is, how a team works and how students can get involved in engineering.',
-  },
-  {
-    number: '03',
-    title: 'Hands-on workshops',
-    image: '/images/outreach/hands-on-workshop.png',
-    description: 'Students get to explore the game, interact with robots and learn through practical building, problem-solving and testing.',
-  },
-  {
-    number: '04',
-    title: 'Remote support',
-    image: '/images/outreach/remote-session.png',
-    description: 'We also support learning and collaboration remotely through online sessions, progress sharing and technical discussion.',
-  },
-  {
-    number: '05',
-    title: 'Robot demonstrations',
-    image: '/images/outreach/robot-demo.png',
-    description: 'By showing robots up close, we help others understand design choices, mechanisms, iteration and what competitive robotics looks like in practice.',
-  },
+const items = [
+  ['Community presentations','We introduce students and local groups to FTC, robotics and the engineering process behind our team.','/images/outreach/scout-presentation.png'],
+  ['School engagement','Talks and demonstrations show how an FTC team works and how students can get involved.','/images/outreach/school-presentation.png'],
+  ['Hands-on workshops','Students explore robots, game fields and practical engineering through building and testing.','/images/outreach/hands-on-workshop.png'],
+  ['Remote support','Online sessions let us share progress, troubleshoot and support robotics learning beyond in-person events.','/images/outreach/remote-session.png'],
+  ['Robot demonstrations','We put real machines in front of students so design decisions become tangible.','/images/outreach/robot-demo.png'],
 ];
 ---
-<Base title="Outreach · Triple Six FTC 26587">
-  <section class="page-hero">
-    <div class="shell">
-      <p class="eyebrow">Beyond competition</p>
-      <h1>OUR <span class="gradient-text">OUTREACH.</span></h1>
-      <p class="lede">
-        Triple Six shares robotics through presentations, workshops, demonstrations and mentoring — helping more students discover engineering.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell outreach-list">
-      {outreachItems.map((item) => (
-        <article class="outreach-entry">
-          <div class="outreach-image">
-            <img src={item.image} alt={item.title} loading="lazy" />
-          </div>
-
-          <div class="outreach-copy">
-            <span class="outreach-number">{item.number}</span>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
+<Base title="Outreach — Triple Six FTC 26587">
+  <section class="page-hero"><div class="shell"><p class="kicker">Outreach</p><h1>What we share</h1><p class="lede">Competition is only part of the work. We use presentations, workshops, demonstrations and online support to make robotics more accessible.</p></div></section>
+  <section class="section"><div class="shell outreach-list">{items.map(([title,desc,image],i)=><article class="outreach-row"><img src={image} alt={title} loading="lazy"/><div><span class="index">0{i+1}</span><h2>{title}</h2><p>{desc}</p></div></article>)}</div></section>
 </Base>
-
 <style>
-.outreach-list {
-  display: grid;
-  gap: 92px;
-}
-
-.outreach-entry {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
-  gap: clamp(30px, 6vw, 88px);
-  align-items: end;
-}
-
-.outreach-entry:nth-child(even) .outreach-image {
-  order: 2;
-}
-
-.outreach-entry:nth-child(even) .outreach-copy {
-  order: 1;
-}
-
-.outreach-image {
-  overflow: hidden;
-  border-radius: 6px;
-  background: #05070d;
-  border: 1px solid rgba(255,255,255,.08);
-}
-
-.outreach-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.outreach-number {
-  color: var(--lime);
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .2em;
-}
-
-.outreach-copy h2 {
-  margin: 12px 0 14px;
-  font-size: clamp(3rem, 6vw, 6rem);
-  line-height: .9;
-  letter-spacing: -.06em;
-}
-
-.outreach-copy p {
-  margin: 0;
-  max-width: 45ch;
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.7;
-}
-
-@media (max-width: 800px) {
-  .outreach-entry {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .outreach-entry:nth-child(even) .outreach-image,
-  .outreach-entry:nth-child(even) .outreach-copy {
-    order: initial;
-  }
-}
+.outreach-list{border-top:1px solid var(--line)}.outreach-row{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(34px,7vw,88px);align-items:center;padding:48px 0;border-bottom:1px solid var(--line)}.outreach-row:nth-child(even) img{order:2}.outreach-row img{width:100%;max-height:480px;object-fit:cover}.outreach-row .index{color:var(--dim);font-size:.72rem;letter-spacing:.1em}.outreach-row h2{margin:12px 0 12px;font-size:clamp(2.3rem,5vw,4.6rem);line-height:.95;letter-spacing:-.055em}.outreach-row p{margin:0;color:var(--muted);line-height:1.75}@media(max-width:800px){.outreach-row{grid-template-columns:1fr}.outreach-row:nth-child(even) img{order:initial}}
 </style>

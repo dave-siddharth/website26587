@@ -1,146 +1,51 @@
 ---
 import Base from '../layouts/Base.astro';
-
 const sponsors = [
-  {
-    name: 'Dave Academy',
-    logo: '/images/sponsors/dave-academy-transparent.png',
-    support: 'Registration Support · Mentorship',
-    description: 'Dave Academy helped fund our FTC registration costs and supports Triple Six through mentors from their organisation.',
-    website: null,
-  },
-  {
-    name: 'Cambridge STEAM Lab',
-    logo: '/images/sponsors/cambridge-steam-lab-transparent.png',
-    support: 'Parent Organisation · Mentorship · Financial Support',
-    description: 'Cambridge STEAM Lab is our parent organisation. They provide mentors to the team and have supported Triple Six financially.',
-    website: null,
-  },
+  { name:'Cambridge STEAM Lab', logo:'/images/sponsors/cambridge-steam-lab-white.pngsteam-lab-transparent.png', group:'Parent organisation', contribution:'Mentorship / Financial support', description:'Cambridge STEAM Lab is our parent organisation, provides mentors to the team and has supported Triple Six financially.' },
+  { name:'Dave Academy', logo:'/images/sponsors/dave-academy-transparent.png', group:'Supporter', contribution:'Registration support / Mentorship', description:'Dave Academy helped fund our FTC registration costs and supports Triple Six through mentors from their organisation.' },
 ];
 ---
-<Base title="Sponsors · Triple Six FTC 26587">
+<Base title="Sponsors — Triple Six FTC 26587">
   <section class="page-hero">
     <div class="shell">
-      <p class="eyebrow">Partners</p>
-      <h1>OUR <span class="gradient-text">SPONSORS.</span></h1>
-      <p class="lede">
-        The organisations that help make our engineering, competition and outreach possible.
-      </p>
+      <p class="kicker">Sponsors</p>
+      <h1>Who backs Triple Six</h1>
+      <p class="lede">Every organisation on this page is here because of something they have directly contributed to the team.</p>
+      <a class="text-link" href="/contact">Talk to us about supporting the team</a>
     </div>
   </section>
 
   <section class="section">
     <div class="shell sponsor-list">
-      {sponsors.map((sponsor, index) => (
-        <article class="sponsor">
-          <div class="sponsor-logo-wrap">
-            <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
-          </div>
-
+      {sponsors.map((sponsor) => (
+        <article class="sponsor-row">
+          <div class="sponsor-logo"><img src={sponsor.logo} alt={`${sponsor.name} logo`} /></div>
           <div class="sponsor-copy">
-            <span class="sponsor-number">{String(index + 1).padStart(2, '0')}</span>
-            <p class="support">{sponsor.support}</p>
+            <p class="kicker">{sponsor.group}</p>
             <h2>{sponsor.name}</h2>
-            <p class="description">{sponsor.description}</p>
-            {sponsor.website && (
-              <a class="link" href={sponsor.website} target="_blank" rel="noreferrer">
-                Visit sponsor
-              </a>
-            )}
+            <p class="contribution">{sponsor.contribution}</p>
+            <p>{sponsor.description}</p>
           </div>
         </article>
       ))}
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell section-heading">
+      <div><p class="kicker">Join them</p><h2>There is room on this page</h2></div>
+      <div><p class="body-large">Support helps us turn design work into real hardware, enter competitions and keep sharing robotics with others.</p><a class="text-link" href="/contact">Get in touch</a></div>
+    </div>
+  </section>
 </Base>
 
 <style>
-.sponsor-list {
-  display: grid;
-  gap: 110px;
-}
-
-.sponsor {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-  gap: clamp(42px, 7vw, 100px);
-  align-items: center;
-  padding-bottom: 92px;
-  border-bottom: 1px solid var(--line);
-}
-
-.sponsor:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.sponsor:nth-child(even) .sponsor-logo-wrap {
-  order: 2;
-}
-
-.sponsor:nth-child(even) .sponsor-copy {
-  order: 1;
-}
-
-.sponsor-logo-wrap {
-  min-height: 420px;
-  display: grid;
-  place-items: center;
-  padding: clamp(18px, 4vw, 48px);
-  background: transparent;
-}
-
-.sponsor-logo-wrap img {
-  width: min(100%, 650px);
-  max-height: 330px;
-  object-fit: contain;
-}
-
-.sponsor-number {
-  color: var(--lime);
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .2em;
-}
-
-.support {
-  margin: 20px 0 10px;
-  color: var(--lime);
-  font-size: .76rem;
-  font-weight: 800;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.sponsor h2 {
-  margin: 0 0 20px;
-  font-size: clamp(3rem, 6vw, 6.2rem);
-  line-height: .9;
-  letter-spacing: -.06em;
-}
-
-.description {
-  max-width: 48ch;
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.18rem);
-  line-height: 1.7;
-}
-
-@media (max-width: 800px) {
-  .sponsor {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .sponsor:nth-child(even) .sponsor-logo-wrap,
-  .sponsor:nth-child(even) .sponsor-copy {
-    order: initial;
-  }
-
-  .sponsor-logo-wrap {
-    min-height: 280px;
-    padding: 12px;
-  }
-}
+.sponsor-list { border-top:1px solid var(--line); }
+.sponsor-row { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(38px,8vw,100px); align-items:center; padding:58px 0; border-bottom:1px solid var(--line); }
+.sponsor-logo { min-height:260px; display:grid; place-items:center; }
+.sponsor-logo img { width:min(100%,520px); max-height:230px; object-fit:contain; }
+.sponsor-copy h2 { margin:0 0 8px; font-size:clamp(2.4rem,5vw,4.8rem); letter-spacing:-.055em; }
+.sponsor-copy .contribution { color:#d6dadd; font-size:1.06rem; margin:0 0 15px; }
+.sponsor-copy > p:last-child { margin:0; max-width:50ch; color:var(--muted); line-height:1.75; }
+@media(max-width:800px){.sponsor-row{grid-template-columns:1fr}.sponsor-logo{min-height:200px}}
 </style>

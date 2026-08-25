@@ -1,5 +1,52 @@
 ---
-const links=[['Robots','/robots'],['Team','/team'],['Outreach','/outreach'],['Sponsors','/sponsors'],['Contact','/contact']];
+const links = [
+  ['Team','/team'],
+  ['Robots','/robots'],
+  ['Outreach','/outreach'],
+  ['Sponsors','/sponsors'],
+  ['Contact','/contact'],
+];
 ---
-<header class="nav"><div class="shell nav-inner"><a class="brand" href="/"><img src="/images/triple-six-logo.png" alt="Triple Six FTC 26587 logo"/><span>TRIPLE SIX</span></a><nav>{links.map(([label,href])=><a href={href}>{label}</a>)}</nav></div></header>
-<style>.nav{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(2,6,18,.78);backdrop-filter:blur(18px)}.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.13em;font-size:.78rem}.brand img{width:46px;height:46px;object-fit:cover;border-radius:50%}nav{display:flex;align-items:center;gap:27px}nav a{color:#aeb8c4;font-size:.8rem;font-weight:700}nav a:hover{color:white}@media(max-width:720px){nav{gap:14px;overflow-x:auto}nav a{font-size:.72rem}.brand span{display:none}}</style>
+<header class="site-header">
+  <div class="shell nav-inner">
+    <a class="brand" href="/" aria-label="Triple Six home">
+      <span class="brand-name">TRIPLE SIX</span>
+      <span class="brand-number">26587</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      {links.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<style>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(2,3,5,.94);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  backdrop-filter: blur(16px);
+}
+.nav-inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand-name { font-size: .88rem; font-weight: 820; letter-spacing: .12em; }
+.brand-number { color: var(--accent); font-size: .66rem; font-weight: 760; letter-spacing: .1em; }
+nav { display: flex; align-items: center; gap: 28px; }
+nav a { color: #a6abb1; font-size: .79rem; font-weight: 650; }
+nav a:hover { color: #fff; }
+@media (max-width: 760px) {
+  .nav-inner { min-height: 64px; gap: 16px; }
+  nav { gap: 14px; overflow-x: auto; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display:none; }
+  nav a { font-size: .7rem; white-space: nowrap; }
+  .brand-number { display: none; }
+}
+</style>

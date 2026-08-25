@@ -1,96 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
-
 const features = [
-  'Pocketed goBILDA drivetrain',
-  '435 RPM output',
-  'Aluminium construction',
-];
-
-const systems = [
-  ['01','Drivetrain','Pocketed goBILDA drivetrain designed as a lightweight preseason base for future robot development.'],
-  ['02','Performance','435 RPM output targeted for a fast and responsive driving experience.'],
-  ['03','Structure','Aluminium construction for strength, stiffness and reduced weight.'],
-  ['04','Preseason development','A platform for early prototyping, testing and iteration before the full season robot evolves.'],
+  ['Drivetrain','Pocketed goBILDA drivetrain'],
+  ['Output','435 RPM'],
+  ['Construction','Aluminium structure'],
+  ['Purpose','Preseason testing platform for the 2026–2027 season'],
 ];
 ---
-<Base title="2026–2027 · BIOBUZZ · Triple Six">
-  <section class="page-hero">
-    <div class="shell">
-      <p class="eyebrow">2026–2027 season</p>
-      <h1>BIO<span class="gradient-text">BUZZ.</span></h1>
-      <p class="lede">Our preseason robot platform for early testing, mechanical iteration and drivebase development.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell">
-      <div class="robot-hero">
-        <img src="/images/robots/biobuzz-preseason.png" alt="BIOBUZZ preseason CAD render" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Key features</p>
-        <h2 class="section-title">BIOBUZZ preseason.</h2>
-      </div>
-      <div>
-        <ul class="feature-list">
-          {features.map((feature) => <li>{feature}</li>)}
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell">
-      <p class="eyebrow">Subsystems</p>
-      <div class="small-grid">
-        {systems.map(([n, title, desc]) => (
-          <article class="small-card">
-            <span class="number">{n}</span>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+<Base title="BIOBUZZ — Triple Six">
+  <section class="page-hero"><div class="shell"><p class="kicker">2026–2027 season</p><h1>BIOBUZZ</h1><p class="lede">Our preseason platform for early drivebase testing, mechanical iteration and development before the full competition robot evolves.</p></div></section>
+  <section class="section"><div class="shell robot-hero"><img src="/images/robots/biobuzz-preseason.png" alt="BIOBUZZ preseason CAD render" /></div></section>
+  <section class="section"><div class="shell section-heading"><div><p class="kicker">Preseason</p><h2>Where BIOBUZZ starts</h2></div><div class="rule-list">{features.map(([title,desc],i)=><div class="rule-row"><span class="index">0{i+1}</span><div><h3>{title}</h3><p>{desc}</p></div></div>)}</div></div></section>
 </Base>
-
-<style>
-.robot-hero {
-  min-height: 620px;
-  border-radius: 28px;
-  background: #05070d;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  padding: 30px;
-}
-
-.robot-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.feature-list {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: var(--text);
-  font-size: clamp(1rem, 2vw, 1.15rem);
-}
-
-.feature-list li {
-  margin: 0 0 16px;
-  color: var(--muted);
-}
-
-.feature-list li::marker {
-  color: var(--lime);
-}
-</style>
+<style>.robot-hero img{width:100%;max-height:720px;object-fit:contain;background:#080a0c}.rule-row{grid-template-columns:60px 1fr}</style>
