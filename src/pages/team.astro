@@ -65,14 +65,13 @@ const mentors = [
 <style>
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 220px));
-  gap: 38px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   margin-top: 48px;
-  justify-content: start;
 }
 
 .person {
-  max-width: 220px;
+  max-width: none;
 }
 
 .person img {
@@ -83,15 +82,15 @@ const mentors = [
 }
 
 .person h3 {
-  margin: 14px 0 4px;
-  font-size: 1.18rem;
-  letter-spacing: -.025em;
+  margin: 16px 0 5px;
+  font-size: 1.35rem;
+  letter-spacing: -.03em;
 }
 
 .person p {
   margin: 0;
   color: var(--muted);
-  font-size: .84rem;
+  font-size: .9rem;
   line-height: 1.55;
 }
 
@@ -111,44 +110,38 @@ const mentors = [
 .mentor-list {
   margin-top: 42px;
   border-top: 1px solid var(--line);
-  max-width: 760px;
 }
 
 .mentor-row {
   display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 22px;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
   align-items: center;
-  padding: 20px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .mentor-row img {
-  width: 76px;
-  height: 76px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
 }
 
 .mentor-row h3 {
-  margin: 0 0 4px;
-  font-size: 1.24rem;
-  letter-spacing: -.025em;
+  margin: 0 0 5px;
+  font-size: 1.45rem;
+  letter-spacing: -.03em;
 }
 
 .mentor-row p {
   margin: 0;
   color: var(--muted);
-  font-size: .84rem;
+  font-size: .9rem;
 }
 
 @media (max-width: 800px) {
   .people-grid {
-    grid-template-columns: repeat(2, minmax(0, 180px));
-    gap: 28px;
-  }
-
-  .person {
-    max-width: 180px;
+    grid-template-columns: 1fr 1fr;
   }
 
   .team-photo-grid {
@@ -156,16 +149,16 @@ const mentors = [
   }
 
   .mentor-row {
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 100px 1fr;
   }
 
   .mentor-row img {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .people-grid {
     grid-template-columns: 1fr;
   }

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" fill="none">
+  <rect width="760" height="220" fill="transparent"/>
+  <defs>
+    <linearGradient id="g" x1="80" y1="20" x2="680" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D2AE8"/>
+      <stop offset="0.5" stop-color="#00C4CC"/>
+      <stop offset="1" stop-color="#7DFF72"/>
+    </linearGradient>
+  </defs>
+  <text x="30" y="150"
+        font-family="Brush Script MT, Segoe Script, Pacifico, cursive"
+        font-size="138"
+        font-weight="700"
+        fill="url(#g)">Canva</text>
+</svg>

@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 const sponsors = [
   {
     name: 'Dave Academy',
-    logo: '/images/sponsors/dave-academy-transparent.png',
+    logo: '/images/sponsors/dave-academy-clean.png',
     support: 'Registration Support · Mentorship',
     description: 'Dave Academy helped fund our FTC registration costs and supports Triple Six through mentors from their organisation.',
   },
@@ -13,6 +13,12 @@ const sponsors = [
     logo: '/images/sponsors/cambridge-steam-lab-white.png',
     support: 'Parent Organisation · Mentorship · Financial Support',
     description: 'Cambridge STEAM Lab is our parent organisation. They provide mentors to the team and have supported Triple Six financially.',
+  },
+  {
+    name: 'Canva',
+    logo: '/images/sponsors/canva-wordmark.svg',
+    support: 'Design Support',
+    description: 'Canva supports Triple Six by helping us create visual materials for outreach, communication and team presentation.',
   },
 ];
 ---
@@ -42,12 +48,30 @@ const sponsors = [
       ))}
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell your-company-block">
+      <p class="eyebrow">Partner with Triple Six</p>
+      <h2>Your company could be on this page.</h2>
+      <p>
+        Support FTC Team 26587 and your organisation can be recognised alongside
+        the partners helping us engineer better robots, compete, and expand our
+        outreach. We can feature sponsors on our website, team materials and
+        selected outreach communications.
+      </p>
+      <div class="partner-actions">
+        <a class="partner-button primary" href="/contact">Become a sponsor</a>
+        <a class="partner-button" href="mailto:triplesixftc@gmail.com">Email us</a>
+      </div>
+    </div>
+  </section>
+
 </Base>
 
 <style>
 .sponsor-list {
   display: grid;
-  gap: 80px;
+  gap: 34px;
 }
 
 .sponsor {
@@ -73,16 +97,16 @@ const sponsors = [
 }
 
 .sponsor-logo-wrap {
-  min-height: 300px;
+  min-height: 190px;
   display: grid;
   place-items: center;
-  padding: 20px 10px;
+  padding: 10px 0;
   background: transparent;
 }
 
 .sponsor-logo-wrap img {
   width: min(100%, 620px);
-  max-height: 220px;
+  max-height: 140px;
   object-fit: contain;
 }
 
@@ -129,7 +153,59 @@ const sponsors = [
   }
 
   .sponsor-logo-wrap {
-    min-height: 220px;
+    min-height: 190px;
   }
+}
+
+.your-company-block {
+  padding: clamp(38px, 6vw, 72px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255,255,255,.015);
+}
+
+.your-company-block h2 {
+  margin: 0 0 18px;
+  max-width: 850px;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.your-company-block > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.partner-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.partner-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  font-size: .76rem;
+  font-weight: 760;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.partner-button.primary {
+  background: var(--text);
+  border-color: var(--text);
+  color: #040506;
+}
+
+.partner-button:hover {
+  border-color: var(--accent);
 }
 </style>

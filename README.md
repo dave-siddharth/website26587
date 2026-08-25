@@ -51,3 +51,27 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
   - Post 1: 03 December 2025 22:03 UTC — https://www.instagram.com/p/DbTrv4stkl4/
   - Post 2: 16 November 2025 17:19 UTC — https://www.instagram.com/p/DanZvcRn0nb/?img_index=1
   - Post 3: 06 September 2025 00:22 UTC — https://www.instagram.com/p/DXuw9zADVJ1/?img_index=1
+
+## v24 homepage
+- Rebuilt the opening hero to closely follow Horizon's homepage structure and visual rhythm.
+- No large central photograph in the opening.
+- Added the FIRST/team/location line, oversized "Building towards what's next" headline, short description and two CTA buttons.
+- Supported-by sponsor strip now sits immediately under the opening hero.
+- Rest of homepage follows Horizon's sequence: About, engineering feature, Latest, Team, FIRST program and sponsorship.
+- Existing exact Instagram post links and timestamps retained.
+
+## v25 updates
+- Added Triple Six logo beside the team name in the top navigation.
+- Brought sponsor logos closer together on homepage and Sponsors page.
+- Restored student portraits and mentor images to normal, readable sizes.
+- Added a "Your company could be on this page" sponsorship callout on the homepage and Sponsors page.
+
+## v26 updates
+- Removed the entire Instagram / latest-post section from the homepage.
+- All other v25 homepage, sponsor, team and navigation changes remain unchanged.
+
+## v27 updates
+- Added Canva as a sponsor in all sponsor display areas.
+- Replaced the Dave Academy logo with a cleaner transparent version.
+- Homepage support strip now includes Dave Academy, Cambridge STEAM Lab, and Canva.
+- Sponsors page now lists Dave Academy, Cambridge STEAM Lab, and Canva.
