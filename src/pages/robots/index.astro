@@ -1,30 +1,65 @@
 ---
 import Base from '../../layouts/Base.astro';
+
 const robots = [
-  { season:'2026–2027', name:'BIOBUZZ', status:'Preseason', description:'Pocketed goBILDA drivetrain concept for preseason testing and development.', href:'/robots/2026-2027', image:'/images/robots/biobuzz-preseason.png' },
-  { season:'2025–2026', name:'DECODE', status:'Complete', description:'Turreted scoring robot with adjustable hood, five-stage intake and far-zone / close-zone compatibility.', href:'/robots/2025-2026', image:'/images/robots/decode.png' },
-  { season:'2024–2025', name:'INTO THE DEEP', status:'Complete', description:'REV Starter Bot architecture with mecanum upgrade, 3D printed side structures and efficient claw system.', href:'/robots/2024-2025', image:'/images/robots/into-the-deep.png' },
+  {
+    season: '2026–27',
+    name: 'BIOBUZZ',
+    status: 'PRESEASON',
+    description: 'Pocketed goBILDA drivetrain concept for preseason development and testing.',
+    href: '/robots/2026-2027',
+    image: '/images/robots/biobuzz-preseason.png',
+    cta: 'Follow the build',
+  },
+  {
+    season: '2025–26',
+    name: 'DECODE',
+    status: 'COMPLETED',
+    description: 'Turreted scoring robot built for far-zone and close-zone compatibility.',
+    href: '/robots/2025-2026',
+    image: '/images/robots/decode.png',
+    cta: 'Explore the robot',
+  },
+  {
+    season: '2024–25',
+    name: 'INTO THE DEEP',
+    status: 'COMPLETED',
+    description: 'Starter-bot-based robot with mecanum upgrade, 3D printed side triangles and an efficient claw system.',
+    href: '/robots/2024-2025',
+    image: '/images/robots/into-the-deep.png',
+    cta: 'View season',
+  },
 ];
 ---
-<Base title="Robots — Triple Six FTC 26587">
+<Base title="Robots · Triple Six FTC 26587">
   <section class="page-hero">
     <div class="shell">
-      <p class="kicker">Robots</p>
-      <h1>Our robots</h1>
-      <p class="lede">Three seasons of FTC engineering — from our first competition platform through DECODE and into BIOBUZZ preseason development.</p>
+      <p class="eyebrow">Engineering archive</p>
+      <h1>OUR <span class="gradient-text">ROBOTS.</span></h1>
+      <p class="lede">Three seasons of design, iteration and competition.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="shell robot-list">
+    <div class="shell robot-stack">
       {robots.map((robot) => (
-        <a class="robot-card" href={robot.href}>
-          <div class="robot-media"><img src={robot.image} alt={`${robot.name} robot`} loading="lazy" /></div>
+        <a class="robot-panel" href={robot.href}>
+          <div class="robot-image-wrap">
+            <div class="robot-image">
+              <img src={robot.image} alt={`${robot.name} robot`} loading="lazy" />
+            </div>
+          </div>
+
           <div class="robot-copy">
-            <div class="meta-row"><span>{robot.name} · {robot.season}</span><span>{robot.status}</span></div>
-            <h2>{robot.name}</h2>
+            <div class="robot-meta">
+              <span>{robot.name}</span>
+              <span>·</span>
+              <span>{robot.season}</span>
+              <span class="status-pill">{robot.status}</span>
+            </div>
+            <h2>{robot.name === 'INTO THE DEEP' ? 'Our first\ncompetition robot' : robot.name === 'DECODE' ? 'Our second\ncompetition robot' : 'Our current\nrobot platform'}</h2>
             <p>{robot.description}</p>
-            <span class="text-link">See the robot</span>
+            <span class="robot-link">{robot.cta} <span aria-hidden="true">→</span></span>
           </div>
         </a>
       ))}
@@ -33,12 +68,111 @@ const robots = [
 </Base>
 
 <style>
-.robot-list { display:grid; gap:0; }
-.robot-card { display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(36px,7vw,92px); padding:52px 0; border-top:1px solid var(--line); align-items:center; }
-.robot-card:last-child { border-bottom:1px solid var(--line); }
-.robot-media { background:#080a0c; overflow:hidden; }
-.robot-media img { width:100%; aspect-ratio:16/10; object-fit:contain; }
-.robot-copy h2 { margin:18px 0 12px; font-size:clamp(2.8rem,6vw,5.6rem); line-height:.9; letter-spacing:-.06em; }
-.robot-copy p { margin:0; color:var(--muted); max-width:46ch; line-height:1.75; }
-@media(max-width:800px){.robot-card{grid-template-columns:1fr;gap:26px}}
+.robot-stack {
+  display: grid;
+  gap: 42px;
+}
+
+.robot-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  gap: clamp(34px, 6vw, 70px);
+  align-items: center;
+  padding: 46px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.015)),
+    rgba(255,255,255,.015);
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+}
+
+.robot-image-wrap {
+  min-width: 0;
+}
+
+.robot-image {
+  min-height: 430px;
+  border: 1px dashed rgba(255,255,255,.10);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  background: rgba(0,0,0,.12);
+}
+
+.robot-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  display: block;
+}
+
+.robot-copy {
+  min-width: 0;
+}
+
+.robot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #a8b0bc;
+  font-size: .88rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  letter-spacing: .16em;
+}
+
+.robot-copy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+  white-space: pre-line;
+  font-weight: 420;
+}
+
+.robot-copy p {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.14rem);
+  line-height: 1.7;
+  max-width: 28ch;
+}
+
+.robot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #f0c443;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (max-width: 920px) {
+  .robot-panel {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .robot-image {
+    min-height: 280px;
+  }
+
+  .robot-copy h2 {
+    font-size: clamp(2.4rem, 9vw, 4rem);
+  }
+}
 </style>
