@@ -10,11 +10,7 @@ const robotLinks = [
 
 const resourcesLinks = [
   { label: 'OUR RESOURCES', href: '/resources' },
-  {
-    label: 'IMPACT OUTREACH SYSTEM',
-    href: 'https://docs.google.com/document/d/1-BsJmPFJLOOYKio6LReJt_3Q27yyV2sjCEjM28xTPi4/edit?tab=t.0',
-    external: true
-  },
+  { label: 'IMPACT OUTREACH SYSTEM', href: '/resources/impact-outreach-system' },
   { label: 'FIRST LAUNCH', href: '/resources/first-launch' },
 ];
 
@@ -109,6 +105,21 @@ const isActive = (href) => {
       <a class:list={['nav-link', { active: isActive('/contact') }]} href="/contact">
         CONTACT
       </a>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch light / dark mode">
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </span>
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.5 14.2A8.2 8.2 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">Toggle light and dark mode</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -118,8 +129,8 @@ const isActive = (href) => {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: linear-gradient(180deg, rgba(24,24,24,.97), rgba(13,15,17,.97));
-  border-bottom: 1px solid rgba(112,230,129,.14);
+  background: linear-gradient(180deg, var(--nav-bg-1), var(--nav-bg-2));
+  border-bottom: 1px solid var(--nav-border);
   backdrop-filter: blur(18px);
 }
 
@@ -167,7 +178,7 @@ const isActive = (href) => {
   padding: 0 11px;
   border: 0;
   background: transparent;
-  color: #f1f1ef;
+  color: var(--nav-text);
   font-size: .82rem;
   font-weight: 760;
   letter-spacing: .075em;
@@ -220,7 +231,7 @@ const isActive = (href) => {
   border: 1px solid rgba(112,230,129,.14);
   background:
     radial-gradient(circle at 100% 0%, rgba(17,207,224,.06), transparent 38%),
-    rgba(19,21,22,.99);
+    var(--nav-menu-bg);
   box-shadow: 0 20px 44px rgba(0,0,0,.40);
   opacity: 0;
   visibility: hidden;
@@ -247,7 +258,7 @@ const isActive = (href) => {
 .nav-menu a {
   position: relative;
   padding: 12px 18px;
-  color: #f1f1ef;
+  color: var(--nav-text);
   font-size: .8rem;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -263,6 +274,67 @@ const isActive = (href) => {
   inset: auto 18px 5px 18px;
   height: 1px;
   background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+}
+
+.theme-toggle {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin: 21px 0 0 4px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-bg);
+  color: var(--nav-text);
+  cursor: pointer;
+  transition: border-color .18s ease, transform .18s ease, background .18s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(112,230,129,.45);
+  background:
+    linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box,
+    var(--accent-gradient) border-box;
+}
+
+.theme-icon {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  transition: opacity .16s ease, transform .16s ease;
+}
+
+.theme-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+:global(html[data-theme="dark"]) .theme-icon-sun {
+  opacity: 1;
+  transform: scale(1);
+}
+
+:global(html[data-theme="dark"]) .theme-icon-moon {
+  opacity: 0;
+  transform: scale(.72);
+}
+
+:global(html[data-theme="light"]) .theme-icon-sun {
+  opacity: 0;
+  transform: scale(.72);
+}
+
+:global(html[data-theme="light"]) .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (max-width: 1080px) {
@@ -289,6 +361,11 @@ const isActive = (href) => {
     min-height: 56px;
     white-space: nowrap;
   }
+
+  .theme-toggle {
+    flex: 0 0 42px;
+    margin: 7px 0 0 4px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -302,3 +379,35 @@ const isActive = (href) => {
   }
 }
 </style>
+
+
+<script>
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+
+  if (themeToggle) {
+    const root = document.documentElement;
+
+    const syncThemeButton = () => {
+      const current = root.dataset.theme === 'light' ? 'light' : 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      themeToggle.setAttribute('aria-label', `Switch to ${next} mode`);
+      themeToggle.setAttribute('title', `Switch to ${next} mode`);
+    };
+
+    syncThemeButton();
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.dataset.theme === 'light' ? 'light' : 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+
+      root.dataset.theme = next;
+      root.style.colorScheme = next;
+
+      try {
+        localStorage.setItem('triple-six-theme', next);
+      } catch (_) {}
+
+      syncThemeButton();
+    });
+  }
+</script>

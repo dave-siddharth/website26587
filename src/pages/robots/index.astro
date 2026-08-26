@@ -86,7 +86,7 @@ const robots = [
   background:
     radial-gradient(circle at 12% 20%, rgba(202,255,50,.035), transparent 32%),
     radial-gradient(circle at 90% 85%, rgba(17,207,224,.03), transparent 34%),
-    rgba(255,255,255,.015);
+    var(--panel-bg);
   box-shadow: 0 14px 40px rgba(0,0,0,.18);
 }
 
@@ -132,7 +132,7 @@ const robots = [
   display: inline-flex;
   align-items: center;
   padding: 9px 18px;
-  border: 1px solid rgba(255,255,255,.14);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   letter-spacing: .16em;
 }

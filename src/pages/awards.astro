@@ -13,27 +13,27 @@ const featuredAward = {
 
 const awards = [
   {
-    season: '2025–2026',
+    season: '2025–2026 · DECODE',
     event: 'East Qualifier',
     location: 'Comberton Village College',
     title: 'Reach Award',
   },
   {
-    season: '2025–2026',
+    season: '2025–2026 · DECODE',
     event: 'East Qualifier',
     location: 'Comberton Village College',
     title: 'Finalist Alliance Captain',
   },
   {
-    season: '2024–2025',
+    season: '2024–2025 · INTO THE DEEP',
     event: 'Langley Qualifier',
-    location: 'INTO THE DEEP',
+    location: '',
     title: 'Finalist Alliance Partner',
   },
   {
-    season: '2024–2025',
+    season: '2024–2025 · INTO THE DEEP',
     event: 'Langley Qualifier',
-    location: 'INTO THE DEEP',
+    location: '',
     title: 'Connect Award',
   },
 ];
@@ -91,7 +91,7 @@ const awards = [
             <p class="card-meta">{award.season}</p>
             <h3>{award.title}</h3>
             <p class="card-event">{award.event}</p>
-            <p class="card-location">{award.location}</p>
+            {award.location && <p class="card-location">{award.location}</p>}
           </article>
         ))}
       </div>
@@ -102,7 +102,7 @@ const awards = [
 <style>
 .awards-hero {
   padding: clamp(78px, 9vw, 120px) 0 clamp(36px, 5vw, 54px);
-  background: #050607;
+  background: var(--surface-0);
 }
 
 .hero-grid {
@@ -130,7 +130,7 @@ const awards = [
 
 .featured-section {
   padding: 0 0 34px;
-  background: #050607;
+  background: var(--surface-0);
 }
 
 .featured-award {
@@ -227,7 +227,7 @@ const awards = [
 
 .cards-section {
   padding: clamp(24px, 4vw, 38px) 0 clamp(78px, 9vw, 116px);
-  background: #050607;
+  background: var(--surface-0);
 }
 
 .cards-heading h2 {
@@ -247,10 +247,10 @@ const awards = [
 .award-card {
   position: relative;
   padding: 30px 30px 32px;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid var(--line);
   background:
     radial-gradient(circle at 100% 100%, rgba(17,207,224,.04), transparent 32%),
-    rgba(255,255,255,.022);
+    var(--panel-bg);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 

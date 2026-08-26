@@ -1,0 +1,224 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const impactDoc = 'https://docs.google.com/document/d/1-BsJmPFJLOOYKio6LReJt_3Q27yyV2sjCEjM28xTPi4/edit?tab=t.0';
+
+const pillars = [
+  { letter: 'I', name: 'Intent', text: 'Define why your outreach exists and what change you want to create.' },
+  { letter: 'M', name: 'Market', text: 'Identify who you are trying to reach and understand their needs.' },
+  { letter: 'P', name: 'Plan', text: 'Design outreach that is purposeful, structured and realistic.' },
+  { letter: 'A', name: 'Act', text: 'Deliver outreach clearly, consistently and with ownership.' },
+  { letter: 'C', name: 'Check', text: 'Measure results and gather evidence of what really happened.' },
+  { letter: 'T', name: 'Tune', text: 'Improve what comes next by refining what you learned.' },
+];
+---
+<Base title="The IMPACT Outreach System · Triple Six FTC 26587">
+  <section class="impact-hero">
+    <div class="shell">
+      <p class="eyebrow">FTC Outreach Resource</p>
+      <h1>IMPACT<br /><span>OUTREACH SYSTEM.</span></h1>
+      <p class="intro">
+        A practical outreach framework for FTC teams that want to build work that is
+        intentional, measurable and sustainable rather than random or one-off.
+      </p>
+
+      <div class="actions">
+        <a href={impactDoc} target="_blank" rel="noreferrer">
+          <span class="action-icon docs">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+          </span>
+          <span>Open documentation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section impact-content">
+    <div class="shell content-grid">
+      <div>
+        <p class="eyebrow">The framework</p>
+        <h2>From activity to strategy.</h2>
+      </div>
+      <p>
+        The IMPACT Outreach System helps teams think more clearly about how outreach
+        is planned, delivered and improved. Instead of just counting events, it gives
+        teams a structure for making outreach purposeful and for showing what changed
+        because of it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pillars-section">
+    <div class="shell pillar-grid">
+      {pillars.map((pillar) => (
+        <article class="pillar-card">
+          <div class="pillar-top">
+            <span class="pillar-letter">{pillar.letter}</span>
+            <h3>{pillar.name}</h3>
+          </div>
+          <p>{pillar.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+.impact-hero {
+  padding: clamp(90px, 11vw, 150px) 0 clamp(76px, 9vw, 118px);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(202,255,50,.075), transparent 27%),
+    radial-gradient(circle at 88% 80%, rgba(17,207,224,.07), transparent 32%),
+    var(--surface-0);
+}
+
+.impact-hero h1 {
+  margin: 14px 0 0;
+  font-size: clamp(4.5rem, 11vw, 10rem);
+  line-height: .78;
+  letter-spacing: -.09em;
+}
+
+.impact-hero h1 span {
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.intro {
+  max-width: 840px;
+  margin: 38px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(112,230,129,.22);
+  background: var(--panel-bg);
+  color: var(--text);
+  font-size: .78rem;
+  font-weight: 820;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.action-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--green);
+  flex: none;
+}
+
+.action-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: clamp(42px, 8vw, 110px);
+}
+
+.content-grid h2 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+
+.content-grid > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pillar-card {
+  position: relative;
+  min-height: 220px;
+  padding: 26px 26px 28px;
+  border: 1px solid var(--line-soft);
+  background:
+    radial-gradient(circle at 100% 100%, rgba(17,207,224,.04), transparent 34%),
+    rgba(255,255,255,.02);
+}
+
+.pillar-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+}
+
+.pillar-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pillar-letter {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(112,230,129,.24);
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.pillar-card h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  letter-spacing: -.03em;
+}
+
+.pillar-card p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .pillar-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .content-grid,
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

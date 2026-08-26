@@ -1,21 +1,64 @@
 :root {
+  color-scheme: dark;
+
   --accent: #caff32;
   --accent-2: #70e681;
   --accent-3: #11cfe0;
+  --green: #70e681;
+  --cyan: #11cfe0;
   --accent-gradient: linear-gradient(90deg, #caff32 0%, #70e681 48%, #11cfe0 100%);
   --accent-gradient-soft: linear-gradient(90deg, rgba(202,255,50,.20), rgba(112,230,129,.15), rgba(17,207,224,.18));
   --accent-glow: 0 0 45px rgba(17,207,224,.10);
 
   --bg: #020305;
-  --bg-soft: #080a0d;
+  --surface-0: #050607;
+  --surface-1: #07090b;
+  --surface-2: #090b0d;
+  --panel-bg: rgba(255,255,255,.022);
+
   --text: #f5f6f7;
+  --text-soft: #d7dadd;
   --muted: #969ca5;
   --dim: #656b73;
-  --accent: #a9ef55;
-  --accent-2: #13c8cf;
+
   --line: rgba(255,255,255,.12);
   --line-soft: rgba(255,255,255,.075);
+  --line-strong: rgba(255,255,255,.22);
+
+  --nav-bg-1: rgba(24,24,24,.97);
+  --nav-bg-2: rgba(13,15,17,.97);
+  --nav-text: #f1f1ef;
+  --nav-menu-bg: rgba(19,21,22,.99);
+  --nav-border: rgba(112,230,129,.14);
+
   --max: 1180px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #fafcfd;
+  --surface-0: #f6f8f9;
+  --surface-1: #edf2f4;
+  --surface-2: #e4eaed;
+  --panel-bg: rgba(8,29,34,.035);
+
+  --text: #0c1114;
+  --text-soft: #2e3940;
+  --muted: #566169;
+  --dim: #7a858d;
+
+  --line: rgba(12,25,30,.13);
+  --line-soft: rgba(12,25,30,.075);
+  --line-strong: rgba(12,25,30,.24);
+
+  --nav-bg-1: rgba(252,253,253,.97);
+  --nav-bg-2: rgba(240,245,247,.97);
+  --nav-text: #101518;
+  --nav-menu-bg: rgba(249,251,252,.99);
+  --nav-border: rgba(55,174,132,.20);
+
+  --accent-glow: 0 0 45px rgba(17,207,224,.08);
 }
 
 * { box-sizing: border-box; }
@@ -93,7 +136,7 @@ button, input, textarea { font: inherit; }
 
 .body-large {
   margin: 0;
-  color: #d7dadd;
+  color: var(--text-soft);
   font-size: clamp(1.16rem, 2.2vw, 1.52rem);
   line-height: 1.65;
 }
@@ -234,4 +277,22 @@ body::before {
   background:
     linear-gradient(145deg, rgba(202,255,50,.035), rgba(17,207,224,.025)),
     var(--panel);
+}
+
+
+html,
+body {
+  transition: background-color .22s ease, color .22s ease;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }

@@ -1,4 +1,44 @@
 ---
-import Nav from '../components/Nav.astro';import Footer from '../components/Footer.astro';import '../styles/global.css';const {title='Triple Six · FTC 26587',description='FTC Team 26587 Triple Six — engineering, competition, and impact.'}=Astro.props;
+import Nav from '../components/Nav.astro';
+import SponsorStrip from '../components/SponsorStrip.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Triple Six · FTC 26587',
+  description = 'FTC Team 26587 Triple Six — engineering, competition, and impact.'
+} = Astro.props;
+
+const isHome = Astro.url.pathname === '/';
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><title>{title}</title></head><body><Nav/><main><slot/></main><Footer/></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('triple-six-theme');
+          const theme =
+            saved === 'light' || saved === 'dark'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (_) {}
+      })();
+    </script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav />
+    <main><slot /></main>
+    {!isHome && <SponsorStrip />}
+    <Footer />
+  </body>
+</html>

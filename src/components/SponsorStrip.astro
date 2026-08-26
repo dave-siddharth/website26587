@@ -1,0 +1,148 @@
+<section class="sponsor-strip" aria-label="Team sponsors">
+  <div class="shell sponsor-strip-inner">
+    <p>Supported by</p>
+
+    <div class="sponsor-strip-logos">
+      <a class="strip-logo arm" href="/sponsors" aria-label="Arm">
+        <img src="/images/sponsors/arm-logo.png" alt="Arm" />
+      </a>
+
+      <a class="strip-logo zeiss" href="/sponsors" aria-label="ZEISS">
+        <img src="/images/sponsors/zeiss-logo.png" alt="ZEISS" />
+      </a>
+
+      <a class="strip-logo dave" href="/sponsors" aria-label="Dave Academy">
+        <img src="/images/sponsors/dave-academy-original-clean.png" alt="Dave Academy" />
+      </a>
+
+      <a class="strip-logo steam" href="/sponsors" aria-label="Cambridge STEAM Lab">
+        <img src="/images/sponsors/cambridge-steam-lab-white.png" alt="Cambridge STEAM Lab" />
+      </a>
+
+      <a class="strip-logo canva" href="/sponsors" aria-label="Canva">
+        <img src="/images/sponsors/canva-logo.png" alt="Canva" />
+      </a>
+    </div>
+
+    <a class="strip-link" href="/sponsors">Our sponsors <span>→</span></a>
+  </div>
+</section>
+
+<style>
+.sponsor-strip {
+  color: #f5f6f7;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  background: #020305;
+}
+
+.sponsor-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--accent-gradient);
+  opacity: .48;
+}
+
+.sponsor-strip-inner {
+  min-height: 104px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(24px, 4vw, 50px);
+  align-items: center;
+}
+
+.sponsor-strip-inner > p {
+  margin: 0;
+  color: #969ca5;
+  font-size: .68rem;
+  font-weight: 720;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sponsor-strip-logos {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 34px);
+  min-width: 0;
+}
+
+.strip-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.strip-logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 14px rgba(17,207,224,.14));
+}
+
+.strip-logo img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.strip-logo.arm img {
+  width: 86px;
+  max-height: 42px;
+}
+
+.strip-logo.zeiss img {
+  width: 62px;
+  max-height: 50px;
+}
+
+.strip-logo.dave img {
+  width: 126px;
+  max-height: 42px;
+}
+
+.strip-logo.steam img {
+  width: 166px;
+  max-height: 44px;
+}
+
+.strip-logo.canva img {
+  width: 116px;
+  max-height: 40px;
+}
+
+.strip-link {
+  color: #969ca5;
+  font-size: .76rem;
+  white-space: nowrap;
+}
+
+.strip-link span {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 920px) {
+  .sponsor-strip-inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .sponsor-strip-logos {
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+
+  .strip-link {
+    width: fit-content;
+  }
+}
+</style>

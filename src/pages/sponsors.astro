@@ -3,6 +3,18 @@ import Base from '../layouts/Base.astro';
 
 const sponsors = [
   {
+    name: 'Arm',
+    logo: '/images/sponsors/arm-logo.png',
+    support: 'Financial Support · Industry Mentorship',
+    description: 'Arm supports Triple Six with financial sponsorship and industry mentors, giving our students opportunities to learn directly from experienced professionals.',
+  },
+  {
+    name: 'ZEISS',
+    logo: '/images/sponsors/zeiss-logo.png',
+    support: 'Financial Support · Industry Mentorship',
+    description: 'ZEISS supports Triple Six with financial sponsorship and industry mentors, giving our students opportunities to learn directly from experienced professionals.',
+  },
+  {
     name: 'Dave Academy',
     logo: '/images/sponsors/dave-academy-original-clean.png',
     support: 'Registration Support · Mentorship',
@@ -35,7 +47,7 @@ const sponsors = [
     <div class="shell sponsor-list">
       {sponsors.map((sponsor, index) => (
         <article class="sponsor">
-          <div class="sponsor-logo-wrap">
+          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS' }]}>
             <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
           </div>
           <div class="sponsor-copy">
@@ -132,6 +144,16 @@ const sponsors = [
   object-fit: contain;
 }
 
+.sponsor-logo-wrap.arm img {
+  width: min(100%, 300px);
+  max-height: 150px;
+}
+
+.sponsor-logo-wrap.zeiss img {
+  width: min(100%, 250px);
+  max-height: 185px;
+}
+
 .sponsor-logo-wrap::before {
   content: "";
   position: absolute;
@@ -204,7 +226,7 @@ const sponsors = [
   background:
     radial-gradient(circle at 0% 0%, rgba(202,255,50,.045), transparent 32%),
     radial-gradient(circle at 100% 100%, rgba(17,207,224,.04), transparent 34%),
-    rgba(255,255,255,.015);
+    var(--panel-bg);
 }
 
 .your-company-block h2 {
@@ -263,7 +285,7 @@ const sponsors = [
   background:
     radial-gradient(circle at 0% 0%, rgba(202,255,50,.045), transparent 32%),
     radial-gradient(circle at 100% 100%, rgba(17,207,224,.04), transparent 34%),
-    rgba(255,255,255,.015);
+    var(--panel-bg);
 }
 
 .fundraiser-logo {

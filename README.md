@@ -175,3 +175,53 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Added the FTC Rookie Handbook Google Doc.
 - Added the FIRST LAUNCH Discord invite.
 - Created a dedicated `/resources/first-launch` page.
+
+## v45 updates
+- Added ZEISS as a sponsor using the supplied ZEISS logo.
+- Added ZEISS to the homepage Supported by strip.
+- Added ZEISS to the Sponsors page.
+- Sponsor support wording: Financial Support · Industry Mentorship.
+- Added text recognising both financial sponsorship and opportunities to learn from ZEISS industry mentors.
+
+## v46 updates
+- Added Arm as a sponsor using the supplied Arm logo.
+- Arm support listed as Financial Support · Industry Mentorship.
+- Added Arm to the homepage Supported by strip and the Sponsors page.
+- Created a reusable sponsor strip with Arm, ZEISS, Dave Academy, Cambridge STEAM Lab and Canva.
+- The sponsor strip now appears above the footer on every page except the homepage.
+
+## v47 updates
+- Added Ryan Ganguli as a Triple Six mentor using the supplied photo.
+- Ryan: FRC 1884 alum · FTC 19280 alum · Mechatronic Engineering at the University of Sheffield.
+- Isha Dave affiliation updated to Cambridge STEAM Lab · Dave Academy.
+- Kinjal Dave affiliation updated to Arm Holdings · Cambridge STEAM Lab.
+- Refined mentor rows to display affiliations and background cleanly.
+
+## v48 updates
+- Added Kshitij Dubey as a mentor using the supplied photo.
+- Kshitij: FTC 27891 Alum · St Paul’s School.
+- Mentor order is now Kinjal Dave, Isha Dave, Ryan Ganguli, Kshitij Dubey.
+
+## v49 updates
+- Updated both 2024–2025 awards so the top line reads:
+  2024–2025 · INTO THE DEEP
+- Langley Qualifier remains shown beneath each award title.
+
+## v50 updates
+- Updated the two non-Inspire 2025–2026 awards so their top line reads:
+  2025–2026 · DECODE
+- The featured Inspire Award remains unchanged.
+
+## v51 updates
+- Added a dedicated `/resources/impact-outreach-system` page in the same style as FIRST LAUNCH.
+- Changed the RESOURCES dropdown and Resources page so IMPACT links to its own internal page.
+- Added documentation / Discord-style icon buttons to the resource actions.
+- FIRST LAUNCH now shows clearer documentation and Discord icon links.
+- The main Resources page now links to both the resource pages and their external documentation/Discord links.
+
+## v52 updates
+- Added a light / dark mode toggle button to the top navigation.
+- Theme choice is saved in the browser and restored on future visits.
+- Added a full light colour palette while keeping the Triple Six lime → green → cyan gradient.
+- Updated FIRST LAUNCH Discord buttons to explicitly say "Join our Discord".
+- Kept the sponsor strip dark in both themes so the sponsor logos remain clearly visible.

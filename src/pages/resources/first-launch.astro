@@ -15,8 +15,18 @@ const discord = 'https://discord.gg/mzqH3Dqv6j';
       </p>
 
       <div class="actions">
-        <a href={handbook} target="_blank" rel="noreferrer">Read the FTC Rookie Handbook ↗</a>
-        <a href={discord} target="_blank" rel="noreferrer">Join the Discord ↗</a>
+        <a href={handbook} target="_blank" rel="noreferrer">
+          <span class="action-icon docs">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+          </span>
+          <span>Read the FTC Rookie Handbook</span>
+        </a>
+        <a href={discord} target="_blank" rel="noreferrer">
+          <span class="action-icon discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 8.5c1.1-.8 2.2-1.1 3.5-1.1 1.3 0 2.4.3 3.5 1.1M8 16.5c1.2.9 2.5 1.3 4 1.3s2.8-.4 4-1.3"/><path d="M7 18c-2.2-1.2-3.5-3.6-3.5-6 0-3.9 3.6-7 8.5-7s8.5 3.1 8.5 7c0 2.4-1.3 4.8-3.5 6l-1-.9"/><circle cx="9.5" cy="12" r="1"/><circle cx="14.5" cy="12" r="1"/></svg>
+          </span>
+          <span>Join our Discord</span>
+        </a>
       </div>
     </div>
   </section>
@@ -47,7 +57,7 @@ const discord = 'https://discord.gg/mzqH3Dqv6j';
           The FIRST LAUNCH Discord gives new and developing teams a place to ask questions,
           compare approaches and connect with students and mentors across multiple FTC regions.
         </p>
-        <a class="discord-link" href={discord} target="_blank" rel="noreferrer">Join FIRST LAUNCH Discord ↗</a>
+        <a class="discord-link" href={discord} target="_blank" rel="noreferrer">Join our Discord ↗</a>
       </div>
     </div>
   </section>
@@ -59,7 +69,7 @@ const discord = 'https://discord.gg/mzqH3Dqv6j';
   background:
     radial-gradient(circle at 15% 20%, rgba(202,255,50,.075), transparent 27%),
     radial-gradient(circle at 88% 80%, rgba(17,207,224,.07), transparent 32%),
-    #050607;
+    var(--surface-0);
 }
 
 .fl-hero h1 {
@@ -93,15 +103,44 @@ const discord = 'https://discord.gg/mzqH3Dqv6j';
 
 .actions a,
 .discord-link {
-  display: inline-block;
-  padding: 12px 0 8px;
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(90deg, #caff32, #70e681, #11cfe0) 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(112,230,129,.22);
+  background: var(--panel-bg);
   color: var(--text);
   font-size: .78rem;
   font-weight: 820;
   letter-spacing: .08em;
   text-transform: uppercase;
+}
+
+.action-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.action-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.action-icon.docs {
+  color: var(--green);
+}
+
+.action-icon.discord {
+  color: var(--cyan);
 }
 
 .content-grid {
@@ -129,7 +168,7 @@ const discord = 'https://discord.gg/mzqH3Dqv6j';
 .discord-panel {
   background:
     radial-gradient(circle at 100% 100%, rgba(17,207,224,.055), transparent 34%),
-    #07090b;
+    var(--surface-1);
 }
 
 .discord-link {

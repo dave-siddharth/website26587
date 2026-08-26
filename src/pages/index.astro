@@ -63,6 +63,14 @@ const posts = [
     <div class="shell support-grid">
       <p>Supported by</p>
 
+      <a class="support-logo arm" href="/sponsors" aria-label="Arm">
+        <img src="/images/sponsors/arm-logo.png" alt="Arm" />
+      </a>
+
+      <a class="support-logo zeiss" href="/sponsors" aria-label="ZEISS">
+        <img src="/images/sponsors/zeiss-logo.png" alt="ZEISS" />
+      </a>
+
       <a class="support-logo dave" href="/sponsors" aria-label="Dave Academy">
         <img src="/images/sponsors/dave-academy-original-clean.png" alt="Dave Academy" />
       </a>
@@ -407,7 +415,7 @@ const posts = [
 .support-grid {
   min-height: 112px;
   display: grid;
-  grid-template-columns: auto auto auto auto 1fr;
+  grid-template-columns: auto auto auto auto auto auto 1fr;
   gap: 16px;
   align-items: center;
 }
@@ -431,6 +439,16 @@ const posts = [
   width: 100%;
   object-fit: contain;
   object-position: left center;
+}
+
+.support-logo.arm img {
+  max-width: 94px;
+  max-height: 46px;
+}
+
+.support-logo.zeiss img {
+  max-width: 74px;
+  max-height: 54px;
 }
 
 .support-logo.dave img {
@@ -457,6 +475,19 @@ const posts = [
 
 .support-link span {
   color: var(--accent);
+}
+
+
+@media (max-width: 980px) {
+  .support-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+  }
+
+  .support-link {
+    margin-left: 0;
+  }
 }
 
 /* Core Horizon-like two-column section rhythm */
@@ -545,7 +576,7 @@ const posts = [
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: contain;
-  background: #07090b;
+  background: var(--surface-1);
 }
 
 .achievement-media figcaption {
@@ -692,7 +723,7 @@ const posts = [
   .support-grid {
   min-height: 112px;
   display: grid;
-  grid-template-columns: auto auto auto auto 1fr;
+  grid-template-columns: auto auto auto auto auto auto 1fr;
   gap: 16px;
   align-items: center;
 }
@@ -729,7 +760,7 @@ const posts = [
   .support-grid {
   min-height: 112px;
   display: grid;
-  grid-template-columns: auto auto auto auto 1fr;
+  grid-template-columns: auto auto auto auto auto auto 1fr;
   gap: 16px;
   align-items: center;
 }
