@@ -155,3 +155,23 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
   - 2025–2026 · East Qualifier · Comberton Village College · Finalist Alliance Captain
   - 2024–2025 · Langley Qualifier · INTO THE DEEP · Finalist Alliance Partner
   - 2024–2025 · Langley Qualifier · INTO THE DEEP · Connect Award\n
+
+## v42 updates
+- Added a new RESOURCES item to the top navigation.
+- Created `/resources`.
+- Added starter sections for FTC Guides, Rookie Team Support, Fundraising, Engineering, Programming and Outreach resources.
+- Added Resources to the footer navigation.
+
+## v43 updates
+- Added the first real Resources item: "The IMPACT Outreach System".
+- Linked the featured resource directly to the supplied Google Doc.
+- Added a short summary based on the six-pillar I.M.P.A.C.T. framework.
+- Made the resource a full-width featured card while keeping the Triple Six lime → green → cyan branding.
+
+## v44 updates
+- Changed RESOURCES in the top navigation into a dropdown like SEASONS/ROBOTS.
+- Added dropdown links for Our Resources, IMPACT Outreach System and FIRST LAUNCH.
+- Added FIRST LAUNCH as the second real resource.
+- Added the FTC Rookie Handbook Google Doc.
+- Added the FIRST LAUNCH Discord invite.
+- Created a dedicated `/resources/first-launch` page.

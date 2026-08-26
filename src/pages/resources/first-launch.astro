@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const handbook = 'https://docs.google.com/document/d/1APZgrkhzuPZfGMQBbp1shnXP79ZArBHLWSkaUH4tG20/edit?tab=t.0';
+const discord = 'https://discord.gg/mzqH3Dqv6j';
+---
+<Base title="FIRST LAUNCH · Triple Six FTC 26587">
+  <section class="fl-hero">
+    <div class="shell">
+      <p class="eyebrow">Rookie Team Support</p>
+      <h1>FIRST<br /><span>LAUNCH.</span></h1>
+      <p class="intro">
+        A cross-border FTC community created by FTC 12560, FTC 26587 and FTC 30686
+        to make the rookie season easier to navigate.
+      </p>
+
+      <div class="actions">
+        <a href={handbook} target="_blank" rel="noreferrer">Read the FTC Rookie Handbook ↗</a>
+        <a href={discord} target="_blank" rel="noreferrer">Join the Discord ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fl-content">
+    <div class="shell content-grid">
+      <div>
+        <p class="eyebrow">The handbook</p>
+        <h2>Start with a map.</h2>
+      </div>
+      <p>
+        The FTC Rookie Handbook is a practical guide to starting, building, competing
+        and growing in FIRST Tech Challenge. It covers the first 30 days, rules and
+        inspection, hardware, drivetrains, programming, CAD, testing, team operations,
+        judging, outreach, budgeting, grants, sponsorship and event readiness.
+      </p>
+    </div>
+  </section>
+
+  <section class="section discord-panel">
+    <div class="shell content-grid">
+      <div>
+        <p class="eyebrow">The community</p>
+        <h2>Don’t learn alone.</h2>
+      </div>
+      <div>
+        <p>
+          The FIRST LAUNCH Discord gives new and developing teams a place to ask questions,
+          compare approaches and connect with students and mentors across multiple FTC regions.
+        </p>
+        <a class="discord-link" href={discord} target="_blank" rel="noreferrer">Join FIRST LAUNCH Discord ↗</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.fl-hero {
+  padding: clamp(90px, 11vw, 150px) 0 clamp(76px, 9vw, 118px);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(202,255,50,.075), transparent 27%),
+    radial-gradient(circle at 88% 80%, rgba(17,207,224,.07), transparent 32%),
+    #050607;
+}
+
+.fl-hero h1 {
+  margin: 14px 0 0;
+  font-size: clamp(5rem, 13vw, 12rem);
+  line-height: .75;
+  letter-spacing: -.09em;
+}
+
+.fl-hero h1 span {
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.intro {
+  max-width: 820px;
+  margin: 38px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 34px;
+}
+
+.actions a,
+.discord-link {
+  display: inline-block;
+  padding: 12px 0 8px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #caff32, #70e681, #11cfe0) 1;
+  color: var(--text);
+  font-size: .78rem;
+  font-weight: 820;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: clamp(42px, 8vw, 110px);
+}
+
+.content-grid h2 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+
+.content-grid > p,
+.content-grid > div:last-child p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.discord-panel {
+  background:
+    radial-gradient(circle at 100% 100%, rgba(17,207,224,.055), transparent 34%),
+    #07090b;
+}
+
+.discord-link {
+  margin-top: 26px;
+}
+
+@media (max-width: 800px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

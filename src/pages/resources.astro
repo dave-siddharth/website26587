@@ -1,0 +1,422 @@
+---
+import Base from '../layouts/Base.astro';
+
+const impactDoc = 'https://docs.google.com/document/d/1-BsJmPFJLOOYKio6LReJt_3Q27yyV2sjCEjM28xTPi4/edit?tab=t.0';
+const firstLaunchHandbook = 'https://docs.google.com/document/d/1APZgrkhzuPZfGMQBbp1shnXP79ZArBHLWSkaUH4tG20/edit?tab=t.0';
+const firstLaunchDiscord = 'https://discord.gg/mzqH3Dqv6j';
+
+const upcoming = [
+  {
+    number: '03',
+    title: 'Fundraising',
+    eyebrow: 'Team Sustainability',
+    description: 'Fundraising ideas, sponsor outreach material and tools for building sustainable team support.',
+  },
+  {
+    number: '04',
+    title: 'Engineering',
+    eyebrow: 'Build & CAD',
+    description: 'CAD, build notes, robot design references and technical learning from our competition robots.',
+  },
+  {
+    number: '05',
+    title: 'Programming',
+    eyebrow: 'Software',
+    description: 'Code examples, control concepts and software resources from our FTC development.',
+  },
+  {
+    number: '06',
+    title: 'Outreach',
+    eyebrow: 'Community',
+    description: 'Templates and ideas for workshops, demonstrations, mentoring and community engagement.',
+  },
+];
+---
+<Base title="Resources · Triple Six FTC 26587">
+  <section class="resources-hero">
+    <div class="shell resources-hero-grid">
+      <div>
+        <p class="eyebrow">Open resources</p>
+        <h1>RESOURCES.</h1>
+      </div>
+
+      <div class="hero-copy">
+        <p>
+          Things we have learned, built and developed through FTC — shared so other
+          teams and students can use them too.
+        </p>
+        <p class="small-copy">
+          Guides, community support, engineering knowledge and tools built to make
+          FTC easier to enter and easier to grow in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-resources">
+    <div class="shell live-stack">
+
+      <article class="live-card impact-card">
+        <div class="live-top">
+          <span class="number">01</span>
+          <span class="status">OPEN RESOURCE</span>
+        </div>
+
+        <p class="resource-eyebrow">FTC Outreach</p>
+        <h2>The IMPACT Outreach System</h2>
+        <p class="description">
+          A practical six-pillar framework for building focused, measurable and sustainable
+          FTC outreach — from defining your mission to measuring impact and improving year after year.
+        </p>
+
+        <div class="impact-pills" aria-label="IMPACT framework">
+          <span>I</span><span>M</span><span>P</span><span>A</span><span>C</span><span>T</span>
+        </div>
+
+        <a class="resource-action" href={impactDoc} target="_blank" rel="noreferrer">
+          Open the IMPACT system <span>↗</span>
+        </a>
+      </article>
+
+      <article class="live-card first-launch-card">
+        <div class="live-top">
+          <span class="number">02</span>
+          <span class="status">FIRST LAUNCH</span>
+        </div>
+
+        <p class="resource-eyebrow">Rookie Team Support · International FTC Community</p>
+        <h2>FIRST LAUNCH</h2>
+        <p class="description">
+          A cross-border FTC initiative built by FTC 12560, FTC 26587 and FTC 30686
+          to help rookie teams start, build, compete and grow with practical support.
+        </p>
+
+        <div class="first-launch-details">
+          <div>
+            <span class="detail-label">RESOURCE</span>
+            <strong>FTC Rookie Handbook</strong>
+            <p>
+              A practical guide covering the first 30 days, rules and inspection,
+              hardware, drivetrains, programming, CAD, team operations, judging,
+              outreach, budgeting, grants and event readiness.
+            </p>
+          </div>
+
+          <div>
+            <span class="detail-label">COMMUNITY</span>
+            <strong>FIRST LAUNCH Discord</strong>
+            <p>
+              Join the community to ask questions, share ideas and connect with FTC
+              teams across the UK, Romania and the United States.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <a class="resource-action" href={firstLaunchHandbook} target="_blank" rel="noreferrer">
+            Read the Rookie Handbook <span>↗</span>
+          </a>
+          <a class="resource-action secondary" href={firstLaunchDiscord} target="_blank" rel="noreferrer">
+            Join the Discord <span>↗</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="upcoming-section">
+    <div class="shell">
+      <div class="section-title">
+        <p class="eyebrow">Coming next</p>
+        <h2>More resources.</h2>
+      </div>
+
+      <div class="upcoming-grid">
+        {upcoming.map((resource) => (
+          <article class="upcoming-card">
+            <div class="card-top">
+              <span>{resource.number}</span>
+              <span>COMING SOON</span>
+            </div>
+            <p class="resource-eyebrow">{resource.eyebrow}</p>
+            <h3>{resource.title}</h3>
+            <p>{resource.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.resources-hero {
+  padding: clamp(80px, 10vw, 130px) 0 clamp(58px, 7vw, 88px);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(202,255,50,.055), transparent 25%),
+    radial-gradient(circle at 92% 80%, rgba(17,207,224,.05), transparent 28%),
+    #050607;
+}
+
+.resources-hero-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: end;
+}
+
+.resources-hero h1 {
+  margin: 10px 0 0;
+  font-size: clamp(4.2rem, 10vw, 9rem);
+  line-height: .88;
+  letter-spacing: -.08em;
+  font-weight: 710;
+  background: linear-gradient(90deg, #f6f7f5 0%, #d8ff70 45%, #70e681 70%, #11cfe0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-copy > p:first-child {
+  max-width: 700px;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.1rem, 2.2vw, 1.42rem);
+  line-height: 1.7;
+}
+
+.small-copy {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.live-resources {
+  padding: 0 0 clamp(70px, 9vw, 110px);
+  background: #050607;
+}
+
+.live-stack {
+  display: grid;
+  gap: 26px;
+}
+
+.live-card {
+  position: relative;
+  padding: clamp(34px, 5vw, 54px);
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at 0 0, rgba(202,255,50,.065), transparent 29%),
+    radial-gradient(circle at 100% 100%, rgba(17,207,224,.065), transparent 34%),
+    rgba(255,255,255,.022);
+  overflow: hidden;
+}
+
+.live-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+}
+
+.live-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.number {
+  color: var(--dim);
+  font-size: .72rem;
+  letter-spacing: .15em;
+}
+
+.status {
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+}
+
+.resource-eyebrow {
+  margin: clamp(48px, 7vw, 72px) 0 12px;
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: .7rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.live-card h2 {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(3rem, 6.6vw, 6.4rem);
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.description {
+  max-width: 820px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.8vw, 1.16rem);
+  line-height: 1.75;
+}
+
+.impact-pills {
+  display: flex;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.impact-pills span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(112,230,129,.26);
+  font-size: .72rem;
+  font-weight: 850;
+}
+
+.resource-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+  padding: 13px 0 8px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #caff32, #70e681, #11cfe0) 1;
+  color: var(--text);
+  font-size: .78rem;
+  font-weight: 820;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.resource-action span {
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+.resource-action.secondary {
+  border-image: none;
+  border-bottom-color: rgba(255,255,255,.16);
+}
+
+.first-launch-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.first-launch-details > div {
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.018);
+}
+
+.detail-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+}
+
+.first-launch-details strong {
+  display: block;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+}
+
+.first-launch-details p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.upcoming-section {
+  padding: clamp(70px, 9vw, 110px) 0;
+  background: #07090b;
+}
+
+.section-title h2 {
+  margin: 8px 0 0;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.upcoming-card {
+  position: relative;
+  min-height: 250px;
+  padding: 28px 30px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.018);
+}
+
+.upcoming-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #caff32, #70e681, #11cfe0);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--dim);
+  font-size: .65rem;
+  letter-spacing: .13em;
+}
+
+.upcoming-card .resource-eyebrow {
+  margin-top: 44px;
+}
+
+.upcoming-card h3 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+}
+
+.upcoming-card > p:last-child {
+  max-width: 48ch;
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .resources-hero-grid,
+  .first-launch-details,
+  .upcoming-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

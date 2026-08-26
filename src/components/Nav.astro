@@ -8,6 +8,16 @@ const robotLinks = [
   { label: 'INTO THE DEEP', href: '/robots/2024-2025' },
 ];
 
+const resourcesLinks = [
+  { label: 'OUR RESOURCES', href: '/resources' },
+  {
+    label: 'IMPACT OUTREACH SYSTEM',
+    href: 'https://docs.google.com/document/d/1-BsJmPFJLOOYKio6LReJt_3Q27yyV2sjCEjM28xTPi4/edit?tab=t.0',
+    external: true
+  },
+  { label: 'FIRST LAUNCH', href: '/resources/first-launch' },
+];
+
 const sponsorLinks = [
   { label: 'OUR SPONSORS', href: '/sponsors' },
   {
@@ -20,6 +30,7 @@ const sponsorLinks = [
 const isActive = (href) => {
   if (href === '/team') return pathname.startsWith('/team');
   if (href === '/awards') return pathname.startsWith('/awards');
+  if (href === '/resources') return pathname.startsWith('/resources');
   if (href === '/outreach') return pathname.startsWith('/outreach');
   if (href === '/contact') return pathname.startsWith('/contact');
   if (href === '/robots') return pathname.startsWith('/robots');
@@ -42,6 +53,24 @@ const isActive = (href) => {
       <a class:list={['nav-link', { active: isActive('/awards') }]} href="/awards">
         AWARDS
       </a>
+
+      <div class:list={['nav-dropdown', { active: pathname.startsWith('/resources') }]}>
+        <button class="nav-trigger" type="button">
+          <span>RESOURCES</span>
+          <span class="caret">▼</span>
+        </button>
+
+        <div class="nav-menu">
+          <p class="nav-menu-heading">OUR RESOURCES</p>
+          {resourcesLinks.map((item) => (
+            item.external ? (
+              <a href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+            ) : (
+              <a href={item.href}>{item.label}</a>
+            )
+          ))}
+        </div>
+      </div>
 
       <div class:list={['nav-dropdown', { active: pathname.startsWith('/robots') }]}>
         <button class="nav-trigger" type="button">
@@ -204,6 +233,15 @@ const isActive = (href) => {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.nav-menu-heading {
+  margin: 4px 18px 10px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 820;
+  letter-spacing: .15em;
+  text-transform: uppercase;
 }
 
 .nav-menu a {
