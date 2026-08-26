@@ -5,6 +5,7 @@
   --accent-2: #70e681;
   --accent-3: #11cfe0;
   --green: #70e681;
+  --lime: #70e681;
   --cyan: #11cfe0;
   --accent-gradient: linear-gradient(90deg, #caff32 0%, #70e681 48%, #11cfe0 100%);
   --accent-gradient-soft: linear-gradient(90deg, rgba(202,255,50,.20), rgba(112,230,129,.15), rgba(17,207,224,.18));
@@ -15,6 +16,12 @@
   --surface-1: #07090b;
   --surface-2: #090b0d;
   --panel-bg: rgba(255,255,255,.022);
+  --panel: var(--surface-1);
+  --page-glow-base: #01040b;
+  --hero-surface: linear-gradient(180deg, rgba(8,13,17,.96), rgba(2,3,5,.96));
+  --image-surface: #080a0c;
+  --gradient-text-start: #f5f7f4;
+  --button-on-accent: #020506;
 
   --text: #f5f6f7;
   --text-soft: #d7dadd;
@@ -42,6 +49,12 @@
   --surface-1: #edf2f4;
   --surface-2: #e4eaed;
   --panel-bg: rgba(8,29,34,.035);
+  --panel: var(--surface-1);
+  --page-glow-base: #fafcfd;
+  --hero-surface: linear-gradient(180deg, rgba(250,252,253,.98), rgba(240,246,247,.98));
+  --image-surface: #eef3f4;
+  --gradient-text-start: #10171a;
+  --button-on-accent: #06100c;
 
   --text: #0c1114;
   --text-soft: #2e3940;
@@ -157,7 +170,7 @@ button, input, textarea { font: inherit; }
   font-weight: 760;
   letter-spacing: .05em;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,.32);
+  border-bottom: 1px solid var(--line-strong);
   padding-bottom: 4px;
 }
 .text-link:hover { border-color: var(--accent); }
@@ -214,7 +227,7 @@ body {
   background:
     radial-gradient(circle at 15% 0%, rgba(202,255,50,.055), transparent 28%),
     radial-gradient(circle at 85% 15%, rgba(17,207,224,.05), transparent 30%),
-    #01040b;
+    var(--page-glow-base);
 }
 
 body::before {
@@ -295,4 +308,70 @@ body {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+
+/* v53 — complete light-mode pass */
+:root[data-theme="light"] main {
+  background: transparent;
+}
+
+:root[data-theme="light"] .page-hero,
+:root[data-theme="light"] .section,
+:root[data-theme="light"] .awards-hero,
+:root[data-theme="light"] .featured-section,
+:root[data-theme="light"] .cards-section,
+:root[data-theme="light"] .resources-hero,
+:root[data-theme="light"] .live-resources,
+:root[data-theme="light"] .upcoming-section,
+:root[data-theme="light"] .impact-hero,
+:root[data-theme="light"] .fl-hero,
+:root[data-theme="light"] .impact-content,
+:root[data-theme="light"] .pillars-section,
+:root[data-theme="light"] .discord-panel,
+:root[data-theme="light"] .mentors-section,
+:root[data-theme="light"] .awards-note {
+  color: var(--text);
+}
+
+:root[data-theme="light"] .brand-gradient,
+:root[data-theme="light"] .resources-hero h1 {
+  background: linear-gradient(
+    100deg,
+    var(--gradient-text-start) 0%,
+    #4d7e43 42%,
+    #22a97d 68%,
+    #0798aa 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:root[data-theme="light"] .robot-hero img {
+  background: var(--image-surface) !important;
+}
+
+:root[data-theme="light"] .contact-card,
+:root[data-theme="light"] .resource-action,
+:root[data-theme="light"] .pillar-card,
+:root[data-theme="light"] .upcoming-card,
+:root[data-theme="light"] .award-card,
+:root[data-theme="light"] .resource-card,
+:root[data-theme="light"] .first-launch-details > div,
+:root[data-theme="light"] .fundraiser-card,
+:root[data-theme="light"] .your-company-block {
+  background-color: var(--panel-bg);
+}
+
+:root[data-theme="light"] .home-hero {
+  background: var(--hero-surface);
+}
+
+:root[data-theme="light"] .hero-description,
+:root[data-theme="light"] .robot-copy,
+:root[data-theme="light"] .footer-copy,
+:root[data-theme="light"] .footer-link,
+:root[data-theme="light"] .footer-contact {
+  color: var(--muted) !important;
 }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="title">
+<title id="title">PCBWay</title>
+<g fill="none" stroke="#f47a20" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M24 77V43h35c17 0 28 8 28 21s-11 21-28 21H24"/>
+  <circle cx="43" cy="64" r="6" fill="#f47a20" stroke="none"/>
+  <path d="M95 43h23c18 0 30 8 30 21s-12 21-30 21H95z"/>
+  <path d="M157 43h25c18 0 29 8 29 21s-11 21-29 21h-25"/>
+</g>
+<text x="226" y="83" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="800" letter-spacing="-2" fill="#f47a20">Way</text>
+</svg>

@@ -15,6 +15,12 @@ const sponsors = [
     description: 'ZEISS supports Triple Six with financial sponsorship and industry mentors, giving our students opportunities to learn directly from experienced professionals.',
   },
   {
+    name: 'PCBWay',
+    logo: '/images/sponsors/pcbway-logo.png',
+    support: 'Manufacturing Sponsor',
+    description: 'PCBWay supports Triple Six as a manufacturing sponsor, helping us turn engineering designs into physical parts and prototypes.',
+  },
+  {
     name: 'Dave Academy',
     logo: '/images/sponsors/dave-academy-original-clean.png',
     support: 'Registration Support · Mentorship',
@@ -47,7 +53,7 @@ const sponsors = [
     <div class="shell sponsor-list">
       {sponsors.map((sponsor, index) => (
         <article class="sponsor">
-          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS' }]}>
+          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS', pcbway: sponsor.name === 'PCBWay', steam: sponsor.name === 'Cambridge STEAM Lab' }]}>
             <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
           </div>
           <div class="sponsor-copy">
@@ -147,6 +153,11 @@ const sponsors = [
 .sponsor-logo-wrap.arm img {
   width: min(100%, 300px);
   max-height: 150px;
+}
+
+.sponsor-logo-wrap.pcbway img {
+  width: min(100%, 360px);
+  max-height: 132px;
 }
 
 .sponsor-logo-wrap.zeiss img {
@@ -267,7 +278,7 @@ const sponsors = [
 .partner-button.primary {
   background: var(--accent-gradient);
   border-color: transparent;
-  color: #020506;
+  color: var(--button-on-accent);
 }
 
 .partner-button:hover {
@@ -334,6 +345,10 @@ const sponsors = [
 
 .fundraiser-button:hover {
   border-color: var(--accent);
+}
+
+:global(html[data-theme="light"]) .sponsor-logo-wrap.steam img {
+  filter: brightness(.16);
 }
 
 @media (max-width: 760px) {

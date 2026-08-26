@@ -1,4 +1,8 @@
-<section class="sponsor-strip" aria-label="Team sponsors">
+---
+const { compact = false } = Astro.props;
+---
+
+<section class:list={['sponsor-strip', { compact }]} aria-label="Team sponsors">
   <div class="shell sponsor-strip-inner">
     <p>Supported by</p>
 
@@ -9,6 +13,10 @@
 
       <a class="strip-logo zeiss" href="/sponsors" aria-label="ZEISS">
         <img src="/images/sponsors/zeiss-logo.png" alt="ZEISS" />
+      </a>
+
+      <a class="strip-logo pcbway" href="/sponsors" aria-label="PCBWay">
+        <img src="/images/sponsors/pcbway-logo.png" alt="PCBWay" />
       </a>
 
       <a class="strip-logo dave" href="/sponsors" aria-label="Dave Academy">
@@ -30,11 +38,11 @@
 
 <style>
 .sponsor-strip {
-  color: #f5f6f7;
   position: relative;
-  border-top: 1px solid rgba(255,255,255,.07);
-  border-bottom: 1px solid rgba(255,255,255,.07);
-  background: #020305;
+  color: var(--text);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--surface-0);
 }
 
 .sponsor-strip::before {
@@ -50,13 +58,17 @@
   min-height: 104px;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: clamp(24px, 4vw, 50px);
+  gap: 24px;
   align-items: center;
+}
+
+.sponsor-strip.compact .sponsor-strip-inner {
+  min-height: 108px;
 }
 
 .sponsor-strip-inner > p {
   margin: 0;
-  color: #969ca5;
+  color: var(--muted);
   font-size: .68rem;
   font-weight: 720;
   letter-spacing: .14em;
@@ -67,7 +79,7 @@
 .sponsor-strip-logos {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 2.5vw, 34px);
+  gap: 16px;
   min-width: 0;
 }
 
@@ -75,13 +87,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 54px;
+  padding: 0;
   transition: transform .18s ease, filter .18s ease;
 }
 
 .strip-logo:hover {
   transform: translateY(-2px);
-  filter: drop-shadow(0 0 14px rgba(17,207,224,.14));
+  filter: drop-shadow(0 0 12px rgba(17,207,224,.14));
 }
 
 .strip-logo img {
@@ -91,32 +104,37 @@
 }
 
 .strip-logo.arm img {
-  width: 86px;
-  max-height: 42px;
+  width: 78px;
+  max-height: 38px;
 }
 
 .strip-logo.zeiss img {
-  width: 62px;
-  max-height: 50px;
-}
-
-.strip-logo.dave img {
-  width: 126px;
-  max-height: 42px;
-}
-
-.strip-logo.steam img {
-  width: 166px;
+  width: 56px;
   max-height: 44px;
 }
 
-.strip-logo.canva img {
-  width: 116px;
+.strip-logo.pcbway img {
+  width: 106px;
+  max-height: 39px;
+}
+
+.strip-logo.dave img {
+  width: 112px;
+  max-height: 38px;
+}
+
+.strip-logo.steam img {
+  width: 142px;
   max-height: 40px;
 }
 
+.strip-logo.canva img {
+  width: 104px;
+  max-height: 37px;
+}
+
 .strip-link {
-  color: #969ca5;
+  color: var(--muted);
   font-size: .76rem;
   white-space: nowrap;
 }
@@ -128,17 +146,22 @@
   color: transparent;
 }
 
-@media (max-width: 920px) {
+/* Cambridge STEAM Lab asset is white, so flip it for the light theme. */
+:global(html[data-theme="light"]) .strip-logo.steam img {
+  filter: brightness(0.16);
+}
+
+@media (max-width: 1040px) {
   .sponsor-strip-inner {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    gap: 10px;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
   .sponsor-strip-logos {
     flex-wrap: wrap;
-    gap: 12px 22px;
+    gap: 12px 16px;
   }
 
   .strip-link {

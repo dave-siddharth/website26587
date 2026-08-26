@@ -228,7 +228,7 @@ const isActive = (href) => {
   min-width: 250px;
   display: grid;
   padding: 12px 0;
-  border: 1px solid rgba(112,230,129,.14);
+  border: 1px solid var(--nav-border);
   background:
     radial-gradient(circle at 100% 0%, rgba(17,207,224,.06), transparent 38%),
     var(--nav-menu-bg);
@@ -282,7 +282,7 @@ const isActive = (href) => {
   place-items: center;
   width: 42px;
   height: 42px;
-  margin: 21px 0 0 4px;
+  margin: 0 0 0 4px;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -364,7 +364,8 @@ const isActive = (href) => {
 
   .theme-toggle {
     flex: 0 0 42px;
-    margin: 7px 0 0 4px;
+    margin: 0 0 0 4px;
+    align-self: center;
   }
 }
 

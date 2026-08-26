@@ -225,3 +225,21 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Added a full light colour palette while keeping the Triple Six lime → green → cyan gradient.
 - Updated FIRST LAUNCH Discord buttons to explicitly say "Join our Discord".
 - Kept the sponsor strip dark in both themes so the sponsor logos remain clearly visible.
+
+## v53 updates
+- Fixed the light theme across the full site instead of only the navigation and selected sections.
+- Removed the old forced-black body background that prevented pages becoming light.
+- Made homepage, robot pages, resource pages, footer, dropdowns and cards theme-aware.
+- Added PCBWay as a Manufacturing Sponsor.
+- Added PCBWay to the homepage and site-wide sponsor strips.
+- Reused one SponsorStrip component on the homepage and all internal pages so spacing is identical.
+- Tightened sponsor logo spacing to a consistent 16px on desktop.
+- Cambridge STEAM Lab's white logo automatically becomes dark in light mode for visibility.
+
+## v54 updates
+- Vertically centered the light/dark theme toggle with the rest of the top navigation.
+- Removed the extra top margin that made the toggle sit lower than the nav links.
+
+## v55 updates
+- Replaced the PCBWay sponsor logo with the uploaded PCBWay logo.
+- Cleaned the black background and saved it as a transparent PNG for the sponsor sections.
