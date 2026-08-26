@@ -98,3 +98,60 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Expanded the lime → green → cyan gradient across hero text, buttons, section accents, robot cards and sponsor areas.
 - Added subtle cyan/green glows, hover states and gradient borders.
 - Kept the design restrained so it still feels like Horizon rather than a neon/gaming site.
+
+## v32 updates
+- Added a dropdown selector to the Robots archive and each robot page.
+- Each individual robot page shows the current robot name:
+  - BIOBUZZ
+  - DECODE
+  - INTO THE DEEP
+- The dropdown links directly between all three seasons and back to Our Robots.
+
+## v33 updates
+- Reworked the top navigation to match the reference style more closely.
+- Added a darker premium header with uppercase menu items.
+- Added a gold underline active state.
+- Added dropdown navigation for SEASONS/ROBOTS and SPONSORS.
+- Included the Triple Six logo and brand at the top left.
+
+## v34 updates
+- Added AWARDS to the main navigation.
+- Added a dedicated Awards page.
+- Replaced the gold navigation accents with the Triple Six lime → green → cyan gradient.
+- Updated dropdown hover/underline styling to use team branding.
+
+## v35 updates
+- Rebuilt the Awards page to match the reference layout more closely.
+- Added a large featured award banner using the Triple Six lime → green → cyan gradient.
+- Added smaller dark award cards with gradient accent bars.
+- Prepared the page for the full DECODE 2025–26 award list.
+
+## v36 updates
+- Featured best honour set to:
+  - 2025–2026
+  - United Kingdom Championship · London
+  - Inspire Award · 3rd Place
+- Added a prominent "BEST HONOUR TO DATE" label to the featured award.
+
+## v37 updates
+- Added 2025–2026 East Qualifier · Comberton Village College · Reach Award.
+- No explanation text shown for this award.
+
+## v38 updates
+- Added 2025–2026 East Qualifier · Comberton Village College · Finalist Alliance Captain.
+- No explanation text shown for this award.
+
+## v39 updates
+- Added 2024–2025 Langley Qualifier · INTO THE DEEP · Finalist Alliance Partner.
+- No explanation text shown for this award.
+
+## v40 updates
+- Added 2024–2025 Langley Qualifier · INTO THE DEEP · Connect Award.\n\n## v41 updates
+- Restyled the Awards page to feel closer to Seattle Solvers while keeping the Triple Six gradient colours.
+- Added a cleaner hero, one featured top-honour banner, and a structured grid of smaller award cards.
+- Included the current recorded awards:
+  - 2025–2026 · United Kingdom Championship · London · Inspire Award · 3rd Place
+  - 2025–2026 · East Qualifier · Comberton Village College · Reach Award
+  - 2025–2026 · East Qualifier · Comberton Village College · Finalist Alliance Captain
+  - 2024–2025 · Langley Qualifier · INTO THE DEEP · Finalist Alliance Partner
+  - 2024–2025 · Langley Qualifier · INTO THE DEEP · Connect Award\n

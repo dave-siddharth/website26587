@@ -1,0 +1,312 @@
+---
+import Base from '../layouts/Base.astro';
+
+const featuredAward = {
+  season: '2025–2026',
+  event: 'United Kingdom Championship',
+  location: 'London',
+  title: 'Inspire Award',
+  place: '3rd Place',
+  description:
+    'Our best honour to date. At the 2025–2026 United Kingdom Championship in London, Triple Six earned 3rd Place in the Inspire Award — FTC’s highest overall judged award.',
+};
+
+const awards = [
+  {
+    season: '2025–2026',
+    event: 'East Qualifier',
+    location: 'Comberton Village College',
+    title: 'Reach Award',
+  },
+  {
+    season: '2025–2026',
+    event: 'East Qualifier',
+    location: 'Comberton Village College',
+    title: 'Finalist Alliance Captain',
+  },
+  {
+    season: '2024–2025',
+    event: 'Langley Qualifier',
+    location: 'INTO THE DEEP',
+    title: 'Finalist Alliance Partner',
+  },
+  {
+    season: '2024–2025',
+    event: 'Langley Qualifier',
+    location: 'INTO THE DEEP',
+    title: 'Connect Award',
+  },
+];
+---
+<Base title="Awards & Honors · Triple Six FTC 26587">
+  <section class="awards-hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Recognition</p>
+        <h1>Awards &amp; Honors</h1>
+      </div>
+
+      <p class="hero-copy">
+        A record of the awards and competition honours earned by Triple Six
+        across FTC competition, outreach and team achievement.
+      </p>
+    </div>
+  </section>
+
+  <section class="featured-section">
+    <div class="shell">
+      <article class="featured-award">
+        <div class="featured-top">
+          <span class="top-badge">BEST HONOUR TO DATE</span>
+          <p class="featured-meta">{featuredAward.season} · {featuredAward.event} · {featuredAward.location}</p>
+        </div>
+
+        <div class="featured-body">
+          <div class="featured-text">
+            <h2>{featuredAward.title}</h2>
+            <p class="featured-description">{featuredAward.description}</p>
+          </div>
+
+          <div class="featured-place">
+            <span class="place-main">3</span>
+            <span class="place-sub">RD</span>
+            <span class="place-word">PLACE</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="shell">
+      <div class="cards-heading">
+        <p class="eyebrow">More results</p>
+        <h2>Other Awards</h2>
+      </div>
+
+      <div class="award-grid">
+        {awards.map((award) => (
+          <article class="award-card">
+            <div class="card-line"></div>
+            <p class="card-meta">{award.season}</p>
+            <h3>{award.title}</h3>
+            <p class="card-event">{award.event}</p>
+            <p class="card-location">{award.location}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+.awards-hero {
+  padding: clamp(78px, 9vw, 120px) 0 clamp(36px, 5vw, 54px);
+  background: #050607;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(36px, 7vw, 90px);
+  align-items: end;
+}
+
+.awards-hero h1 {
+  margin: 10px 0 0;
+  font-size: clamp(4rem, 9vw, 8.6rem);
+  line-height: .9;
+  letter-spacing: -.075em;
+  font-weight: 700;
+}
+
+.hero-copy {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.24rem);
+  line-height: 1.75;
+}
+
+.featured-section {
+  padding: 0 0 34px;
+  background: #050607;
+}
+
+.featured-award {
+  padding: clamp(32px, 5vw, 54px);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255,255,255,.18), transparent 25%),
+    radial-gradient(circle at 88% 80%, rgba(17,207,224,.26), transparent 36%),
+    linear-gradient(100deg, #caff32 0%, #70e681 50%, #11cfe0 100%);
+  color: #07110c;
+  box-shadow: 0 24px 70px rgba(0,0,0,.18);
+}
+
+.featured-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(7,17,12,.22);
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.featured-meta {
+  margin: 0;
+  color: rgba(7,17,12,.72);
+  font-size: .72rem;
+  font-weight: 760;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.featured-body {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(26px, 5vw, 60px);
+  align-items: center;
+}
+
+.featured-text h2 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+  font-weight: 740;
+}
+
+.featured-description {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: rgba(7,17,12,.82);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.featured-place {
+  display: grid;
+  justify-content: end;
+  justify-items: end;
+  line-height: .8;
+}
+
+.place-main {
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-weight: 820;
+  letter-spacing: -.09em;
+}
+
+.place-sub {
+  margin-right: 8px;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 800;
+  align-self: start;
+}
+
+.place-word {
+  margin-top: 8px;
+  font-size: .9rem;
+  font-weight: 850;
+  letter-spacing: .22em;
+}
+
+.cards-section {
+  padding: clamp(24px, 4vw, 38px) 0 clamp(78px, 9vw, 116px);
+  background: #050607;
+}
+
+.cards-heading h2 {
+  margin: 8px 0 0;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.award-card {
+  position: relative;
+  padding: 30px 30px 32px;
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at 100% 100%, rgba(17,207,224,.04), transparent 32%),
+    rgba(255,255,255,.022);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(112,230,129,.28);
+  box-shadow: 0 18px 46px rgba(17,207,224,.06);
+}
+
+.card-line {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #caff32 0%, #70e681 50%, #11cfe0 100%);
+}
+
+.card-meta {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: .72rem;
+  font-weight: 820;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.award-card h3 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: .98;
+  letter-spacing: -.05em;
+  font-weight: 700;
+}
+
+.card-event {
+  margin: 18px 0 4px;
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 650;
+}
+
+.card-location {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 860px) {
+  .hero-grid,
+  .featured-body,
+  .award-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-place {
+    justify-content: start;
+    justify-items: start;
+  }
+}
+</style>

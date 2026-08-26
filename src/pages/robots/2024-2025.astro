@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RobotSeasonNav from '../../components/RobotSeasonNav.astro';
 const features = [
   ['Drivetrain','REV Starter Bot with mecanum upgrade'],
   ['Structure','3D printed side triangles'],
@@ -7,6 +8,7 @@ const features = [
 ];
 ---
 <Base title="INTO THE DEEP — Triple Six">
+  <RobotSeasonNav current="INTO THE DEEP" />
   <section class="page-hero"><div class="shell"><p class="kicker">2024–2025 season</p><h1>INTO THE DEEP</h1><p class="lede">Our first documented FTC competition robot: straightforward, adaptable and built to establish the team’s mechanical foundation.</p></div></section>
   <section class="section"><div class="shell robot-hero"><img src="/images/robots/into-the-deep.png" alt="INTO THE DEEP robot" /></div></section>
   <section class="section"><div class="shell section-heading"><div><p class="kicker">Key features</p><h2>What we built</h2></div><div class="rule-list">{features.map(([title,desc],i)=><div class="rule-row"><span class="index">0{i+1}</span><div><h3>{title}</h3><p>{desc}</p></div></div>)}</div></div></section>

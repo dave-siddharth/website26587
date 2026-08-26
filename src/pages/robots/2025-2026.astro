@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RobotSeasonNav from '../../components/RobotSeasonNav.astro';
 const features = [
   ['Drivetrain','REV Parallel Plate Mecanum Drivetrain'],
   ['Turret','240° turret travel'],
@@ -8,6 +9,7 @@ const features = [
 ];
 ---
 <Base title="DECODE — Triple Six">
+  <RobotSeasonNav current="DECODE" />
   <section class="page-hero"><div class="shell"><p class="kicker">2025–2026 season</p><h1>DECODE</h1><p class="lede">A turreted scoring robot built around range, adaptability and fast game-piece movement.</p></div></section>
   <section class="section"><div class="shell robot-hero"><img src="/images/robots/decode.png" alt="DECODE robot CAD render" /></div></section>
   <section class="section"><div class="shell section-heading"><div><p class="kicker">Key features</p><h2>What defined DECODE</h2></div><div class="rule-list">{features.map(([title,desc],i)=><div class="rule-row"><span class="index">0{i+1}</span><div><h3>{title}</h3><p>{desc}</p></div></div>)}</div></div></section>

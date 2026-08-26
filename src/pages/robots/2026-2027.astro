@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RobotSeasonNav from '../../components/RobotSeasonNav.astro';
 const features = [
   ['Drivetrain','Pocketed goBILDA drivetrain'],
   ['Output','435 RPM'],
@@ -8,6 +9,7 @@ const features = [
 ];
 ---
 <Base title="BIOBUZZ — Triple Six">
+  <RobotSeasonNav current="BIOBUZZ" />
   <section class="page-hero"><div class="shell"><p class="kicker">2026–2027 season</p><h1>BIOBUZZ</h1><p class="lede">Our preseason platform for early drivebase testing, mechanical iteration and development before the full competition robot evolves.</p></div></section>
   <section class="section"><div class="shell robot-hero"><img src="/images/robots/biobuzz-preseason.png" alt="BIOBUZZ preseason CAD render" /></div></section>
   <section class="section"><div class="shell section-heading"><div><p class="kicker">Preseason</p><h2>Where BIOBUZZ starts</h2></div><div class="rule-list">{features.map(([title,desc],i)=><div class="rule-row"><span class="index">0{i+1}</span><div><h3>{title}</h3><p>{desc}</p></div></div>)}</div></div></section>

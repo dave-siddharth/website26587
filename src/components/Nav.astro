@@ -1,21 +1,85 @@
 ---
-const links = [
-  ['Robots', '/robots'],
-  ['Team', '/team'],
-  ['Outreach', '/outreach'],
-  ['Sponsors', '/sponsors'],
-  ['Contact', '/contact'],
+const pathname = Astro.url.pathname;
+
+const robotLinks = [
+  { label: 'OUR ROBOTS', href: '/robots' },
+  { label: 'BIOBUZZ', href: '/robots/2026-2027' },
+  { label: 'DECODE', href: '/robots/2025-2026' },
+  { label: 'INTO THE DEEP', href: '/robots/2024-2025' },
 ];
+
+const sponsorLinks = [
+  { label: 'OUR SPONSORS', href: '/sponsors' },
+  {
+    label: 'GOFUNDME',
+    href: 'https://www.gofundme.com/f/support-ftc-team-26587-triple-six-for-their-upcoming-seaso',
+    external: true
+  },
+];
+
+const isActive = (href) => {
+  if (href === '/team') return pathname.startsWith('/team');
+  if (href === '/awards') return pathname.startsWith('/awards');
+  if (href === '/outreach') return pathname.startsWith('/outreach');
+  if (href === '/contact') return pathname.startsWith('/contact');
+  if (href === '/robots') return pathname.startsWith('/robots');
+  if (href === '/sponsors') return pathname.startsWith('/sponsors');
+  return pathname === href;
+};
 ---
 <header class="nav">
   <div class="shell nav-inner">
     <a class="brand" href="/">
       <img src="/images/triple-six-logo.png" alt="Triple Six FTC 26587 logo" />
-      <span>TRIPLE SIX <em>26587</em></span>
+      <span>Triple Six</span>
     </a>
 
-    <nav class="nav-links">
-      {links.map(([label, href]) => <a href={href}>{label}</a>)}
+    <nav class="nav-links" aria-label="Primary">
+      <a class:list={['nav-link', { active: isActive('/team') }]} href="/team">
+        ABOUT
+      </a>
+
+      <a class:list={['nav-link', { active: isActive('/awards') }]} href="/awards">
+        AWARDS
+      </a>
+
+      <div class:list={['nav-dropdown', { active: pathname.startsWith('/robots') }]}>
+        <button class="nav-trigger" type="button">
+          <span>SEASONS/ROBOTS</span>
+          <span class="caret">▼</span>
+        </button>
+
+        <div class="nav-menu">
+          {robotLinks.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <a class:list={['nav-link', { active: isActive('/outreach') }]} href="/outreach">
+        OUTREACH
+      </a>
+
+      <div class:list={['nav-dropdown', { active: pathname.startsWith('/sponsors') }]}>
+        <button class="nav-trigger" type="button">
+          <span>SPONSORS</span>
+          <span class="caret">▼</span>
+        </button>
+
+        <div class="nav-menu">
+          {sponsorLinks.map((item) => (
+            item.external ? (
+              <a href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+            ) : (
+              <a href={item.href}>{item.label}</a>
+            )
+          ))}
+        </div>
+      </div>
+
+      <a class:list={['nav-link', { active: isActive('/contact') }]} href="/contact">
+        CONTACT
+      </a>
     </nav>
   </div>
 </header>
@@ -24,14 +88,14 @@ const links = [
 .nav {
   position: sticky;
   top: 0;
-  z-index: 30;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: rgba(2,3,5,.88);
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(24,24,24,.97), rgba(13,15,17,.97));
+  border-bottom: 1px solid rgba(112,230,129,.14);
   backdrop-filter: blur(18px);
 }
 
 .nav-inner {
-  min-height: 74px;
+  min-height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,54 +105,162 @@ const links = [
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: .78rem;
-  font-weight: 780;
-  letter-spacing: .12em;
+  gap: 14px;
+  color: var(--text);
 }
 
 .brand img {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.brand em {
-  color: var(--muted);
-  font-style: normal;
-  font-weight: 650;
+.brand span {
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  font-weight: 760;
+  letter-spacing: -.02em;
 }
 
 .nav-links {
   display: flex;
+  align-items: stretch;
+  gap: clamp(4px, .8vw, 12px);
+}
+
+.nav-link,
+.nav-trigger {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: clamp(16px, 2.6vw, 30px);
+  gap: 8px;
+  min-height: 84px;
+  padding: 0 11px;
+  border: 0;
+  background: transparent;
+  color: #f1f1ef;
+  font-size: .82rem;
+  font-weight: 760;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.nav-links a {
-  color: var(--muted);
-  font-size: .77rem;
-  font-weight: 650;
+.nav-link::after,
+.nav-trigger::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #caff32 0%, #70e681 48%, #11cfe0 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease;
 }
 
-.nav-links a:hover {
-  color: var(--text);
+.nav-link:hover::after,
+.nav-dropdown:hover .nav-trigger::after,
+.nav-link.active::after,
+.nav-dropdown.active .nav-trigger::after {
+  transform: scaleX(1);
 }
 
-@media (max-width: 760px) {
-  .brand span {
-    display: none;
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.caret {
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: .58rem;
+  transform: translateY(-1px);
+}
+
+.nav-menu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  min-width: 250px;
+  display: grid;
+  padding: 12px 0;
+  border: 1px solid rgba(112,230,129,.14);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.06), transparent 38%),
+    rgba(19,21,22,.99);
+  box-shadow: 0 20px 44px rgba(0,0,0,.40);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .16s ease, visibility .16s ease, transform .16s ease;
+}
+
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-menu a {
+  position: relative;
+  padding: 12px 18px;
+  color: #f1f1ef;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.nav-menu a:hover {
+  background: linear-gradient(90deg, rgba(202,255,50,.055), rgba(17,207,224,.04));
+}
+
+.nav-menu a:hover::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 5px 18px;
+  height: 1px;
+  background: linear-gradient(90deg, #caff32, #70e681, #11cfe0);
+}
+
+@media (max-width: 1080px) {
+  .nav-inner {
+    min-height: auto;
+    padding: 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .nav-links {
-    gap: 14px;
+    width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
+    padding-bottom: 4px;
   }
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-link,
+  .nav-trigger {
+    min-height: 56px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand span {
+    font-size: 1rem;
+  }
+
+  .brand img {
+    width: 38px;
+    height: 38px;
   }
 }
 </style>

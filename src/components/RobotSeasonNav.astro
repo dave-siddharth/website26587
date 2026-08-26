@@ -1,0 +1,147 @@
+---
+const { current = '' } = Astro.props;
+
+const robots = [
+  { name: 'BIOBUZZ', season: '2026–2027', href: '/robots/2026-2027' },
+  { name: 'DECODE', season: '2025–2026', href: '/robots/2025-2026' },
+  { name: 'INTO THE DEEP', season: '2024–2025', href: '/robots/2024-2025' },
+];
+---
+
+<div class="season-nav">
+  <div class="shell">
+    <details class="season-dropdown">
+      <summary>
+        <span>{current || 'SEASONS / ROBOTS'}</span>
+        <span class="chevron" aria-hidden="true">▼</span>
+      </summary>
+
+      <div class="dropdown-panel">
+        <a class="dropdown-heading" href="/robots">OUR ROBOTS</a>
+
+        <div class="robot-links">
+          {robots.map((robot) => (
+            <a
+              href={robot.href}
+              class:list={['robot-link', { active: current === robot.name }]}
+            >
+              <span class="robot-name">{robot.name}</span>
+              <span class="robot-season">{robot.season}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+
+<style>
+.season-nav {
+  position: relative;
+  z-index: 15;
+  border-bottom: 1px solid rgba(202,255,50,.28);
+  background: #020305;
+}
+
+.season-dropdown {
+  position: relative;
+  max-width: 430px;
+}
+
+.season-dropdown summary {
+  list-style: none;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  font-size: clamp(1.02rem, 2vw, 1.35rem);
+  font-weight: 760;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: border-color .2s ease;
+}
+
+.season-dropdown summary::-webkit-details-marker { display: none; }
+
+.season-dropdown[open] summary,
+.season-dropdown summary:hover {
+  border-bottom-color: var(--lime);
+}
+
+.chevron {
+  color: var(--lime);
+  font-size: .72rem;
+  transition: transform .2s ease;
+}
+
+.season-dropdown[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown-panel {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: min(430px, calc(100vw - 40px));
+  padding: 28px 30px 26px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-top: 0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.055), transparent 38%),
+    #05070a;
+  box-shadow: 0 24px 60px rgba(0,0,0,.42);
+}
+
+.dropdown-heading {
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .74rem;
+  font-weight: 760;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.robot-links { display: grid; }
+
+.robot-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,.075);
+}
+
+.robot-link:last-child { border-bottom: 0; }
+
+.robot-name {
+  font-size: clamp(1.18rem, 2.4vw, 1.6rem);
+  font-weight: 700;
+}
+
+.robot-season {
+  color: var(--muted);
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+.robot-link:hover .robot-name,
+.robot-link.active .robot-name {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 620px) {
+  .season-dropdown { max-width: none; }
+  .dropdown-panel { width: calc(100vw - 40px); }
+}
+</style>

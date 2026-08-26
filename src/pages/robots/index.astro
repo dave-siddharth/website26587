@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RobotSeasonNav from '../../components/RobotSeasonNav.astro';
 
 const robots = [
   {
@@ -32,6 +33,7 @@ const robots = [
 ];
 ---
 <Base title="Robots · Triple Six FTC 26587">
+  <RobotSeasonNav current="SEASONS / ROBOTS" />
   <section class="page-hero">
     <div class="shell">
       <p class="eyebrow">Engineering archive</p>
