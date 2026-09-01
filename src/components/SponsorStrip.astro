@@ -15,8 +15,16 @@ const { compact = false } = Astro.props;
         <img src="/images/sponsors/zeiss-logo.png" alt="ZEISS" />
       </a>
 
+      <a class="strip-logo skyscanner" href="/sponsors" aria-label="Skyscanner">
+        <img src="/images/sponsors/skyscanner-logo.png" alt="Skyscanner" />
+      </a>
+
       <a class="strip-logo pcbway" href="/sponsors" aria-label="PCBWay">
         <img src="/images/sponsors/pcbway-logo.png" alt="PCBWay" />
+      </a>
+
+      <a class="strip-logo plex" href="/sponsors" aria-label="PLEX">
+        <img src="/images/sponsors/plex-logo.png" alt="PLEX" />
       </a>
 
       <a class="strip-logo dave" href="/sponsors" aria-label="Dave Academy">
@@ -100,36 +108,55 @@ const { compact = false } = Astro.props;
 .strip-logo img {
   display: block;
   width: auto;
+  height: auto;
   object-fit: contain;
 }
 
 .strip-logo.arm img {
-  width: 78px;
+  width: auto;
+  max-width: 78px;
   max-height: 38px;
 }
 
 .strip-logo.zeiss img {
-  width: 56px;
+  width: auto;
+  max-width: 56px;
   max-height: 44px;
 }
 
+.strip-logo.skyscanner img {
+  width: auto;
+  max-width: 124px;
+  max-height: 36px;
+}
+
 .strip-logo.pcbway img {
-  width: 106px;
+  width: auto;
+  max-width: 106px;
   max-height: 39px;
 }
 
+.strip-logo.plex img {
+  width: auto;
+  max-width: 96px;
+  max-height: 42px;
+}
+
 .strip-logo.dave img {
-  width: 112px;
-  max-height: 38px;
+  width: auto;
+  max-width: 88px;
+  max-height: 52px;
 }
 
 .strip-logo.steam img {
-  width: 142px;
+  width: auto;
+  max-width: 142px;
   max-height: 40px;
 }
 
 .strip-logo.canva img {
-  width: 104px;
+  width: auto;
+  max-width: 104px;
   max-height: 37px;
 }
 

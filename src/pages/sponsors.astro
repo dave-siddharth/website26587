@@ -15,10 +15,22 @@ const sponsors = [
     description: 'ZEISS supports Triple Six with financial sponsorship and industry mentors, giving our students opportunities to learn directly from experienced professionals.',
   },
   {
+    name: 'Skyscanner',
+    logo: '/images/sponsors/skyscanner-logo.png',
+    support: 'Financial Support',
+    description: 'Skyscanner supports FTC Team 26587 Triple Six with financial sponsorship, helping fund our robot development, competition costs and team activities.',
+  },
+  {
     name: 'PCBWay',
     logo: '/images/sponsors/pcbway-logo.png',
     support: 'Manufacturing Sponsor',
     description: 'PCBWay supports Triple Six as a manufacturing sponsor, helping us turn engineering designs into physical parts and prototypes.',
+  },
+  {
+    name: 'PLEX',
+    logo: '/images/sponsors/plex-logo.png',
+    support: 'Product Discounts',
+    description: 'PLEX supports FTC Team 26587 Triple Six with discounts on their products, helping us reduce the cost of parts and equipment used in our robotics programme.',
   },
   {
     name: 'Dave Academy',
@@ -53,7 +65,7 @@ const sponsors = [
     <div class="shell sponsor-list">
       {sponsors.map((sponsor, index) => (
         <article class="sponsor">
-          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS', pcbway: sponsor.name === 'PCBWay', steam: sponsor.name === 'Cambridge STEAM Lab' }]}>
+          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS', skyscanner: sponsor.name === 'Skyscanner', pcbway: sponsor.name === 'PCBWay', plex: sponsor.name === 'PLEX', dave: sponsor.name === 'Dave Academy', steam: sponsor.name === 'Cambridge STEAM Lab' }]}>
             <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
           </div>
           <div class="sponsor-copy">
@@ -145,23 +157,46 @@ const sponsors = [
 }
 
 .sponsor-logo-wrap img {
-  width: min(100%, 620px);
+  width: auto;
+  height: auto;
+  max-width: min(100%, 620px);
   max-height: 140px;
   object-fit: contain;
 }
 
 .sponsor-logo-wrap.arm img {
-  width: min(100%, 300px);
+  width: auto;
+  max-width: min(100%, 300px);
   max-height: 150px;
 }
 
+.sponsor-logo-wrap.skyscanner img {
+  width: auto;
+  max-width: min(100%, 430px);
+  max-height: 118px;
+}
+
 .sponsor-logo-wrap.pcbway img {
-  width: min(100%, 360px);
+  width: auto;
+  max-width: min(100%, 360px);
   max-height: 132px;
 }
 
+.sponsor-logo-wrap.plex img {
+  width: auto;
+  max-width: min(100%, 340px);
+  max-height: 135px;
+}
+
+.sponsor-logo-wrap.dave img {
+  width: auto;
+  max-width: min(100%, 250px);
+  max-height: 185px;
+}
+
 .sponsor-logo-wrap.zeiss img {
-  width: min(100%, 250px);
+  width: auto;
+  max-width: min(100%, 250px);
   max-height: 185px;
 }
 

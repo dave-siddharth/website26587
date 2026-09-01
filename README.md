@@ -243,3 +243,20 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 ## v55 updates
 - Replaced the PCBWay sponsor logo with the uploaded PCBWay logo.
 - Cleaned the black background and saved it as a transparent PNG for the sponsor sections.
+
+## v56 updates
+- Added Skyscanner as a financial sponsor of FTC Team 26587 Triple Six.
+- Added the supplied Skyscanner logo to the Sponsors page.
+- Added Skyscanner to the shared sponsor strip used across the site.
+- Kept the same close, even 16px sponsor-logo spacing.
+
+## v57 updates
+- Fixed the Dave Academy logo appearing broken/squashed.
+- Sponsor logos now preserve their original aspect ratios instead of being forced into fixed width/height combinations.
+- Added dedicated Dave Academy sizing on both the shared sponsor strip and Sponsors page.
+
+## v58 updates
+- Added PLEX as a sponsor of FTC Team 26587 Triple Six.
+- Sponsor support listed as Product Discounts.
+- Added the supplied PLEX logo to the Sponsors page.
+- Added PLEX to the shared sponsor strip across the site.
