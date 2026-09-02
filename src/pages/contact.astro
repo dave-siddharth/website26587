@@ -1,131 +1,268 @@
 ---
 import Base from '../layouts/Base.astro';
+import SponsorStrip from '../components/SponsorStrip.astro';
+
+const pageTitle = 'Contact · Triple Six FTC 26587';
+const pageDescription = 'Contact FTC Team 26587 Triple Six for sponsorship, outreach, collaboration, and general enquiries.';
 ---
-<Base title="Contact · Triple Six FTC 26587">
+
+<Base title={pageTitle} description={pageDescription}>
   <section class="page-hero">
     <div class="shell">
-      <p class="eyebrow">Contact</p>
-      <h1>GET IN <span class="gradient-text">TOUCH.</span></h1>
-      <p class="lede">For sponsorship, collaboration, outreach or team enquiries.</p>
+      <p class="eyebrow">CONTACT</p>
+      <h1>Send us a message</h1>
+      <p class="lede">
+        Goes straight to the team inbox. Nothing is stored on this site.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="shell contact-list">
-      <a class="contact-row" href="mailto:triplesixftc@gmail.com">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <path d="M4 7l8 6 8-6"></path>
-          </svg>
-        </span>
-        <span class="label">Email</span>
-        <span class="value">triplesixftc@gmail.com</span>
-        <span class="arrow">↗</span>
-      </a>
+  <section class="contact-section">
+    <div class="shell">
+      <div class="contact-card">
+        <form class="contact-form" action="mailto:triplesixftc@gmail.com" method="post" enctype="text/plain">
+          <div class="form-grid two">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
 
-      <a class="contact-row" href="https://www.instagram.com/triplesixftc/" target="_blank" rel="noreferrer">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
-            <circle cx="12" cy="12" r="4.2"></circle>
-            <circle cx="17.4" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </span>
-        <span class="label">Instagram</span>
-        <span class="value">@triplesixftc</span>
-        <span class="arrow">↗</span>
-      </a>
+            <div class="field">
+              <label for="company">Company or school <span>optional</span></label>
+              <input id="company" name="company" type="text" />
+            </div>
+          </div>
 
-      <a class="contact-row" href="https://www.youtube.com/@TripleSixFTC" target="_blank" rel="noreferrer">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 12s0-3.2-.4-4.8a2.9 2.9 0 0 0-2-2C18 4.7 12 4.7 12 4.7s-6 0-7.6.5a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.9 2.9 0 0 0 2 2c1.6.5 7.6.5 7.6.5s6 0 7.6-.5a2.9 2.9 0 0 0 2-2C22 15.2 22 12 22 12Z"></path>
-            <path d="M10 8.8l5.2 3.2L10 15.2V8.8Z" fill="currentColor" stroke="none"></path>
-          </svg>
-        </span>
-        <span class="label">YouTube</span>
-        <span class="value">@TripleSixFTC</span>
-        <span class="arrow">↗</span>
-      </a>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="field">
+            <label for="topic">What is this about?</label>
+            <select id="topic" name="topic">
+              <option>Sponsoring Triple Six</option>
+              <option>Outreach or workshop</option>
+              <option>Collaboration</option>
+              <option>Mentoring</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="8"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="send-button">
+              <span>Send message</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="alt-contact">
+              Or write to
+              <a href="mailto:triplesixftc@gmail.com">triplesixftc@gmail.com</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
+
+  <SponsorStrip />
 </Base>
 
 <style>
-.contact-list {
-  border-top: 1px solid var(--line);
+.page-hero {
+  padding: 88px 0 20px;
 }
 
-.contact-row {
-  display: grid;
-  grid-template-columns: 58px 150px 1fr auto;
-  gap: 24px;
-  align-items: center;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--line);
-  transition: opacity .2s ease;
-}
-
-.contact-row:hover {
-  opacity: 1;
-  background: linear-gradient(90deg, rgba(202,255,50,.025), rgba(17,207,224,.02));
-}
-
-.icon {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(112,230,129,.20);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--lime);
-  background: var(--panel-bg);
-}
-
-.icon svg {
-  width: 21px;
-  height: 21px;
-}
-
-.label {
-  color: var(--muted);
-  font-size: .75rem;
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: .76rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  color: var(--green);
+  font-weight: 700;
 }
 
-.value {
-  font-size: clamp(1.15rem, 3vw, 2.35rem);
-  letter-spacing: -.03em;
-  overflow-wrap: anywhere;
+.page-hero h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: .98;
+  letter-spacing: -.035em;
 }
 
-.arrow {
-  color: var(--lime);
+.lede {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.contact-section {
+  padding: 18px 0 96px;
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(202,255,50,.035), transparent 22%),
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.05), transparent 22%),
+    var(--panel-bg);
+  box-shadow: var(--accent-glow);
+  padding: clamp(26px, 4vw, 42px);
+}
+
+.contact-form {
+  display: grid;
+  gap: 26px;
+}
+
+.form-grid.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.field {
+  display: grid;
+  gap: 12px;
+}
+
+.field label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field label span {
+  color: var(--muted);
+  font-size: .94rem;
+  font-weight: 500;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-1) 78%, transparent);
+  color: var(--text);
+  padding: 18px 20px;
+  font: inherit;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.field input,
+.field select {
+  min-height: 64px;
+}
+
+.field textarea {
+  min-height: 240px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(112,230,129,.55);
+  box-shadow: 0 0 0 4px rgba(17,207,224,.08);
+}
+
+.field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 28px) calc(50% - 3px),
+    calc(100% - 20px) calc(50% - 3px);
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  padding-right: 52px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.send-button {
+  border: none;
+  border-radius: 999px;
+  padding: 19px 34px;
+  min-width: 250px;
+  background: linear-gradient(135deg, #ff8c52 0%, #ff6b3d 100%);
+  color: #140804;
+  font: inherit;
+  font-weight: 800;
   font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(255,107,61,.2);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-@media (max-width: 760px) {
-  .contact-row {
-    grid-template-columns: 58px 1fr auto;
-    gap: 16px;
+.send-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(255,107,61,.26);
+}
+
+.alt-contact {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.alt-contact a {
+  color: #ffd35a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:root[data-theme="light"] .contact-card {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(202,255,50,.08), transparent 24%),
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.08), transparent 24%),
+    rgba(255,255,255,.74);
+  backdrop-filter: blur(5px);
+}
+
+:root[data-theme="light"] .field input,
+:root[data-theme="light"] .field select,
+:root[data-theme="light"] .field textarea {
+  background: rgba(255,255,255,.82);
+}
+
+@media (max-width: 860px) {
+  .form-grid.two {
+    grid-template-columns: 1fr;
   }
 
-  .label {
-    grid-column: 2 / -1;
-    margin-top: -4px;
+  .form-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .value {
-    grid-column: 2 / 3;
-    font-size: 1.2rem;
-  }
-
-  .arrow {
-    grid-column: 3 / 4;
-    grid-row: 1 / span 2;
-    align-self: center;
+  .send-button {
+    min-width: 0;
+    width: 100%;
   }
 }
 </style>

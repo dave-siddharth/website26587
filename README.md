@@ -259,4 +259,8 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Added PLEX as a sponsor of FTC Team 26587 Triple Six.
 - Sponsor support listed as Product Discounts.
 - Added the supplied PLEX logo to the Sponsors page.
-- Added PLEX to the shared sponsor strip across the site.
+- Added PLEX to the shared sponsor strip across the site.\n\n## v59 updates
+- Redesigned the Contact page to better match the reference layout.
+- Added fields for name, company/school, email, topic, and message.
+- Updated the contact email to triplesixftc@gmail.com.
+- Added a visible alternate email link below the submit button.\n
