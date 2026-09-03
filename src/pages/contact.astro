@@ -70,6 +70,54 @@ const pageDescription = 'Contact FTC Team 26587 Triple Six for sponsorship, outr
     </div>
   </section>
 
+
+  <section class="direct-contact">
+    <div class="shell">
+      <div class="direct-contact-grid">
+        <a class="contact-link-card" href="mailto:triplesixftc@gmail.com" aria-label="Email Triple Six FTC">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="5.5" width="18" height="13" rx="2.2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M4.5 7.5 12 13.2 19.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="contact-meta">
+            <strong>Email</strong>
+            <span>triplesixftc@gmail.com</span>
+          </span>
+        </a>
+
+        <a class="contact-link-card" href="https://www.instagram.com/triplesixftc/" target="_blank" rel="noreferrer" aria-label="Instagram Triple Six FTC">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="contact-meta">
+            <strong>Instagram</strong>
+            <span>@triplesixftc</span>
+          </span>
+        </a>
+
+        <a class="contact-link-card" href="https://www.youtube.com/@TripleSixFTC" target="_blank" rel="noreferrer" aria-label="YouTube Triple Six FTC">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M21 8.6c0-1.6-1.2-2.8-2.8-3-2-.2-4.1-.3-6.2-.3s-4.2.1-6.2.3C4.2 5.8 3 7 3 8.6v6.8c0 1.6 1.2 2.8 2.8 3 2 .2 4.1.3 6.2.3s4.2-.1 6.2-.3c1.6-.2 2.8-1.4 2.8-3V8.6Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M10.2 9.3 15.2 12l-5 2.7V9.3Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="contact-meta">
+            <strong>YouTube</strong>
+            <span>@TripleSixFTC</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
   <SponsorStrip />
 </Base>
 
@@ -265,4 +313,81 @@ const pageDescription = 'Contact FTC Team 26587 Triple Six for sponsorship, outr
     width: 100%;
   }
 }
+
+.direct-contact {
+  padding: 0 0 72px;
+}
+
+.direct-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(202,255,50,.04), transparent 32%),
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.05), transparent 32%),
+    var(--panel-bg);
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.contact-link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(112,230,129,.42);
+  box-shadow: 0 14px 30px rgba(0,0,0,.16);
+}
+
+.contact-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(202,255,50,.13), rgba(17,207,224,.16));
+  color: var(--text);
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-meta {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-meta strong {
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+.contact-meta span:last-child {
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+:root[data-theme="light"] .contact-link-card {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(202,255,50,.08), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(17,207,224,.08), transparent 34%),
+    rgba(255,255,255,.72);
+}
+
+@media (max-width: 960px) {
+  .direct-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

@@ -264,3 +264,8 @@ Connect the repository to Vercel or Netlify. Astro should be detected automatica
 - Added fields for name, company/school, email, topic, and message.
 - Updated the contact email to triplesixftc@gmail.com.
 - Added a visible alternate email link below the submit button.\n
+
+## v60 updates
+- Added back the email, Instagram and YouTube contact links to the Contact page.
+- Added FRC Tees as a Merchandise Sponsor.
+- Added the uploaded FRC Tees logo to the Sponsors page and shared sponsor strip.

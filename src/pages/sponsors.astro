@@ -33,6 +33,12 @@ const sponsors = [
     description: 'PLEX supports FTC Team 26587 Triple Six with discounts on their products, helping us reduce the cost of parts and equipment used in our robotics programme.',
   },
   {
+    name: 'FRC Tees',
+    logo: '/images/sponsors/frctees-logo.png',
+    support: 'Merchandise Sponsor',
+    description: 'FRC Tees supports FTC Team 26587 Triple Six as a merchandise sponsor, helping us with team apparel and branded materials for competitions and outreach.',
+  },
+  {
     name: 'Dave Academy',
     logo: '/images/sponsors/dave-academy-original-clean.png',
     support: 'Registration Support · Mentorship',
@@ -65,7 +71,7 @@ const sponsors = [
     <div class="shell sponsor-list">
       {sponsors.map((sponsor, index) => (
         <article class="sponsor">
-          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS', skyscanner: sponsor.name === 'Skyscanner', pcbway: sponsor.name === 'PCBWay', plex: sponsor.name === 'PLEX', dave: sponsor.name === 'Dave Academy', steam: sponsor.name === 'Cambridge STEAM Lab' }]}>
+          <div class:list={['sponsor-logo-wrap', { arm: sponsor.name === 'Arm', zeiss: sponsor.name === 'ZEISS', skyscanner: sponsor.name === 'Skyscanner', pcbway: sponsor.name === 'PCBWay', plex: sponsor.name === 'PLEX', frctees: sponsor.name === 'FRC Tees', dave: sponsor.name === 'Dave Academy', steam: sponsor.name === 'Cambridge STEAM Lab' }]}>
             <img src={sponsor.logo} alt={`${sponsor.name} logo`} loading="lazy" />
           </div>
           <div class="sponsor-copy">
@@ -186,6 +192,12 @@ const sponsors = [
   width: auto;
   max-width: min(100%, 340px);
   max-height: 135px;
+}
+
+.sponsor-logo-wrap.frctees img {
+  width: auto;
+  max-width: min(100%, 460px);
+  max-height: 125px;
 }
 
 .sponsor-logo-wrap.dave img {

@@ -38,6 +38,9 @@ const { compact = false } = Astro.props;
       <a class="strip-logo canva" href="/sponsors" aria-label="Canva">
         <img src="/images/sponsors/canva-logo.png" alt="Canva" />
       </a>
+      <a class="strip-logo frctees" href="/sponsors" aria-label="FRC Tees">
+        <img src="/images/sponsors/frctees-logo.png" alt="FRC Tees" />
+      </a>
     </div>
 
     <a class="strip-link" href="/sponsors">Our sponsors <span>→</span></a>
@@ -158,6 +161,12 @@ const { compact = false } = Astro.props;
   width: auto;
   max-width: 104px;
   max-height: 37px;
+}
+
+.strip-logo.frctees img {
+  width: auto;
+  max-width: 122px;
+  max-height: 40px;
 }
 
 .strip-link {
